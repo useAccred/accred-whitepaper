@@ -1,0 +1,1179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accred Whitepaper</title>
+<meta name="description" content="Accred Whitepaper V1.0: tokenized LLM credits on Robinhood Chain, and the $CRED token that powers them. Read online or download the PDF.">
+<link rel="canonical" href="https://whitepaper.accred.sh/">
+<link rel="icon" href="brand/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="brand/logo.png">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111110" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Accred">
+<meta property="og:title" content="Accred Whitepaper V1.0">
+<meta property="og:description" content="Tokenized LLM credits on Robinhood Chain, and the $CRED token that powers them.">
+<meta property="og:url" content="https://whitepaper.accred.sh/">
+<meta property="og:image" content="https://whitepaper.accred.sh/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@useaccred">
+<meta name="twitter:title" content="Accred Whitepaper V1.0">
+<meta name="twitter:description" content="Tokenized LLM credits on Robinhood Chain, and the $CRED token that powers them.">
+<meta name="twitter:image" content="https://whitepaper.accred.sh/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TechArticle","headline":"Accred Whitepaper V1.0","alternativeHeadline":"Tokenized LLM credits on Robinhood Chain, and the $CRED token that powers them","datePublished":"2026-10-07","version":"1.0","author":{"@type":"Organization","name":"Accred","url":"https://accred.sh"},"publisher":{"@type":"Organization","name":"Accred","url":"https://accred.sh"},"url":"https://whitepaper.accred.sh/","encoding":{"@type":"MediaObject","encodingFormat":"application/pdf","contentUrl":"https://whitepaper.accred.sh/Accred_Whitepaper_V1.0.pdf"}}
+</script>
+<style>
+:root{
+  --bg:#ffffff;--bg-soft:#f7f7f6;--card:#ffffff;--raised:#f2f2f0;
+  --fg:#111110;--muted:#5f5e58;--faint:#8a8980;
+  --primary:#1f4fe0;--primary-soft:#5b7cf0;--primary-bg:#eef2fd;
+  --line:rgba(17,17,16,.10);--line-strong:rgba(17,17,16,.18);
+  --warn-bg:#fff7e6;--warn-fg:#7a4a00;
+  --code-bg:#f3f3f1;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.05);
+  --sans:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111110;--bg-soft:#151514;--card:#161615;--raised:#1d1d1b;
+    --fg:#f0efeb;--muted:#9a978e;--faint:#6f6d66;
+    --primary:#5b7cf0;--primary-soft:#8ca2f5;--primary-bg:#172043;
+    --line:rgba(240,239,235,.09);--line-strong:rgba(240,239,235,.16);
+    --warn-bg:#2a2010;--warn-fg:#f0c070;
+    --code-bg:#1b1b19;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111110;--bg-soft:#151514;--card:#161615;--raised:#1d1d1b;
+  --fg:#f0efeb;--muted:#9a978e;--faint:#6f6d66;
+  --primary:#5b7cf0;--primary-soft:#8ca2f5;--primary-bg:#172043;
+  --line:rgba(240,239,235,.09);--line-strong:rgba(240,239,235,.16);
+  --warn-bg:#2a2010;--warn-fg:#f0c070;
+  --code-bg:#1b1b19;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;font-feature-settings:"cv11","ss01"}
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
+code,pre,.mono{font-family:var(--mono)}
+code{font-size:.875em;background:var(--code-bg);padding:.1em .35em;border-radius:4px;word-break:break-all}
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;font-size:.8125rem;line-height:1.55}
+pre code{background:none;padding:0;word-break:normal}
+h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em;margin:0}
+p{margin:0 0 1em}
+ul,ol{padding-left:1.3em;margin:0 0 1em}
+li{margin:.3em 0}
+hr{border:0;border-top:1px solid var(--line);margin:2.5rem 0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px;min-width:0}
+@media(min-width:720px){.wrap{padding:0 28px}}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:14px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--fg);font-weight:600;letter-spacing:-.01em}
+.brand:hover{text-decoration:none}
+.brand img{width:28px;height:28px;display:block}
+.brand .sub{color:var(--muted);font-weight:500}
+.top nav{margin-left:auto;display:flex;align-items:center;gap:6px}
+.top nav a{color:var(--muted);font-size:.875rem;padding:7px 10px;border-radius:8px}
+.top nav a:hover{color:var(--fg);background:var(--raised);text-decoration:none}
+.top nav .hide-sm{display:none}
+@media(min-width:720px){.top nav .hide-sm{display:inline-block}}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;font-weight:600;font-size:.9375rem;border:1px solid var(--line-strong);color:var(--fg);background:var(--card);transition:background .15s,border-color .15s}
+.btn:hover{text-decoration:none;background:var(--raised)}
+.btn.primary{background:var(--primary);border-color:var(--primary);color:#fff}
+.btn.primary:hover{background:color-mix(in srgb,var(--primary) 88%,#000)}
+.btn svg{width:16px;height:16px;flex:none}
+.top nav .btn{padding:7px 12px;font-size:.875rem}
+.theme{width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.theme:hover{color:var(--fg);background:var(--raised)}
+.theme svg{width:16px;height:16px}
+
+/* hero */
+.hero{position:relative;padding:64px 0 48px;border-bottom:1px solid var(--line);overflow:hidden}
+.hero::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--primary)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:36px}
+@media(min-width:900px){.hero{padding:88px 0 64px}.hero .wrap{grid-template-columns:1.4fr 1fr;align-items:end}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--primary);margin-bottom:22px}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--primary)}
+.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;letter-spacing:-.035em;line-height:1.02}
+.hero .lede{font-size:clamp(1.125rem,2.3vw,1.4rem);color:var(--primary);margin:20px 0 0;max-width:34ch;line-height:1.4;font-weight:500}
+.hero .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:8px 20px;font-size:.9375rem;padding:22px 24px;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
+.meta dt{color:var(--muted)}
+.meta dd{margin:0;font-weight:500}
+.meta dd a{color:var(--fg)}
+.meta .mono{font-size:.875rem}
+
+/* layout */
+.layout{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;padding:40px 0 80px}
+@media(min-width:1000px){.layout{grid-template-columns:260px minmax(0,1fr);gap:56px;padding:56px 0 100px}}
+.toc{font-size:.875rem}
+@media(min-width:1000px){.toc{position:sticky;top:84px;max-height:calc(100vh - 100px);overflow:auto;padding-right:8px}}
+.toc details{border:1px solid var(--line);border-radius:12px;padding:10px 14px;background:var(--card)}
+.toc summary{cursor:pointer;font-weight:600;list-style:none;display:flex;align-items:center;justify-content:space-between}
+.toc summary::-webkit-details-marker{display:none}
+.toc summary::after{content:"+";color:var(--muted);font-weight:400}
+.toc details[open] summary::after{content:"–"}
+@media(min-width:1000px){.toc details{border:0;padding:0;background:transparent}.toc summary{display:none}}
+.toc ol{list-style:none;padding:0;margin:12px 0 0}
+.toc li{margin:0}
+.toc a{display:block;color:var(--muted);padding:5px 10px;border-left:2px solid transparent;border-radius:0 6px 6px 0;line-height:1.35}
+.toc a:hover{color:var(--fg);text-decoration:none;background:var(--raised)}
+.toc a.active{color:var(--primary);border-left-color:var(--primary);font-weight:500}
+.toc .n{display:inline-block;min-width:1.7em;color:var(--faint);font-family:var(--mono);font-size:.75rem}
+.toc .group{margin-top:14px;padding:0 10px;font-family:var(--mono);font-size:.6875rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+
+article{max-width:76ch;min-width:0}
+article section{scroll-margin-top:84px}
+article h2{font-size:1.9rem;font-weight:700;letter-spacing:-.025em;margin:3.2rem 0 1.1rem;padding-top:1.4rem;border-top:1px solid var(--line)}
+article section:first-of-type h2{border-top:0;padding-top:0;margin-top:0}
+article h2 .n,article h3 .n{color:var(--primary);font-family:var(--mono);font-weight:500;font-size:.72em;margin-right:.5em;letter-spacing:0}
+article h3{font-size:1.25rem;font-weight:600;margin:2.1rem 0 .7rem}
+article h4{font-size:1.02rem;font-weight:600;margin:1.6rem 0 .5rem}
+article p,article li{color:var(--fg)}
+article .lead{font-size:1.125rem;color:var(--muted)}
+.abstract{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin:0 0 .5rem}
+.abstract h2{border:0;padding:0;margin:0 0 .8rem;font-size:1.3rem}
+.abstract p:last-child{margin:0}
+.anchor{color:var(--faint);margin-left:.4em;font-weight:400;opacity:0;font-size:.8em}
+h2:hover .anchor,h3:hover .anchor{opacity:1}
+
+/* tables */
+.tbl{overflow-x:auto;margin:1.2rem 0 1.6rem;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:.9rem;line-height:1.45}
+th,td{text-align:left;vertical-align:top;padding:10px 14px;border-bottom:1px solid var(--line)}
+thead th{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--bg-soft)}
+tbody tr:last-child td{border-bottom:0}
+@media(max-width:720px){table{min-width:560px}}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.mono{font-size:.8rem;word-break:break-all}
+td strong{font-weight:600}
+.cap{font-size:.8125rem;color:var(--muted);margin:-1rem 0 1.6rem;padding:0 4px}
+.cap b{color:var(--fg);font-weight:600}
+
+/* callouts & figures */
+.note{border-left:3px solid var(--primary);background:var(--primary-bg);padding:14px 18px;border-radius:0 10px 10px 0;margin:1.2rem 0 1.4rem}
+.note p:last-child{margin:0}
+.warn{border-left:3px solid #e0a020;background:var(--warn-bg);color:var(--warn-fg);padding:14px 18px;border-radius:0 10px 10px 0;margin:1.2rem 0 1.4rem}
+.warn p{color:inherit}.warn p:last-child{margin:0}
+.fig{margin:1.4rem 0 1.8rem;padding:22px 20px 16px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.fig figcaption{font-size:.8125rem;color:var(--muted);margin-top:12px}
+.fig figcaption b{color:var(--fg);font-weight:600}
+.fig svg{width:100%;height:auto;display:block}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;justify-content:center}
+.flow .box{flex:1 1 120px;min-width:120px;border:1px solid var(--line-strong);border-radius:10px;padding:12px 12px;text-align:center;background:var(--bg-soft)}
+.flow .box b{display:block;font-weight:600;font-size:.9375rem}
+.flow .box span{display:block;font-size:.78rem;color:var(--muted);margin-top:3px}
+.flow .arr{align-self:center;color:var(--faint);font-size:1.2rem;padding:0 2px}
+.math{font-family:var(--mono);font-size:.875rem;background:var(--code-bg);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin:.6rem 0 1.2rem;overflow-x:auto;white-space:pre}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-size:.9375rem;margin:.6rem 0 1.2rem}
+.kv dt{color:var(--muted)}.kv dd{margin:0}
+.bar{display:flex;height:22px;border-radius:6px;overflow:hidden;border:1px solid var(--line);margin:.6rem 0 .5rem}
+.bar i{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.8125rem;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.defs dt{font-weight:600;margin-top:.8rem}
+.defs dd{margin:0 0 .2rem;color:var(--muted)}
+.faq dt{font-weight:600;margin-top:1.2rem}
+.faq dd{margin:.3rem 0 0}
+.addr{font-family:var(--mono);font-size:.8rem}
+.addr a{color:var(--fg);border-bottom:1px dotted var(--line-strong)}
+.addr a:hover{color:var(--primary);text-decoration:none}
+
+/* download card */
+.dl{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:14px;padding:20px 22px;background:var(--bg-soft);margin:2.5rem 0 0}
+.dl .t{font-weight:600}.dl .s{font-size:.875rem;color:var(--muted)}
+
+footer{border-top:1px solid var(--line);padding:36px 0 48px;font-size:.875rem;color:var(--muted)}
+footer .wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+@media(min-width:720px){footer .wrap{grid-template-columns:1fr auto}}
+footer .links{display:flex;flex-wrap:wrap;gap:6px 18px}
+footer .links a{color:var(--muted)}footer .links a:hover{color:var(--fg)}
+
+.totop{position:fixed;right:18px;bottom:18px;width:40px;height:40px;border-radius:10px;border:1px solid var(--line-strong);background:var(--card);color:var(--muted);display:none;align-items:center;justify-content:center;box-shadow:var(--shadow);z-index:15}
+.totop.show{display:inline-flex}
+.totop:hover{color:var(--fg);text-decoration:none}
+
+@media print{
+  .top,.toc,.totop,.dl,.theme,.hero .actions{display:none!important}
+  body{font-size:11pt;color:#000;background:#fff}
+  .layout{display:block;padding:0}
+  article{max-width:none}
+  .hero{padding:0 0 24px}.hero::before{display:none}
+  a{color:inherit}
+  .tbl,.fig,.note,.abstract{break-inside:avoid}
+  article h2{break-after:avoid}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="https://accred.sh" aria-label="Accred">
+      <img src="brand/logo.png" alt="" width="28" height="28">
+      <span>Accred</span><span class="sub">Whitepaper</span>
+    </a>
+    <nav aria-label="Site">
+      <a class="hide-sm" href="#contents">Contents</a>
+      <a class="hide-sm" href="https://accred.sh" target="_blank" rel="noopener">accred.sh</a>
+      <a class="hide-sm" href="https://x.com/useaccred" target="_blank" rel="noopener">X</a>
+      <a class="btn primary" href="Accred_Whitepaper_V1.0.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        PDF
+      </a>
+      <button class="theme" type="button" id="themeBtn" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Version 1.0 · 7 October 2026</div>
+      <h1>Accred<br>Whitepaper</h1>
+      <p class="lede">Tokenized LLM credits on Robinhood Chain, and the $CRED token that powers them.</p>
+      <div class="actions">
+        <a class="btn primary" href="Accred_Whitepaper_V1.0.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF <span style="opacity:.7;font-weight:500">1.3 MB</span>
+        </a>
+        <a class="btn" href="Accred_Whitepaper_V1.0.pdf" target="_blank" rel="noopener">Open in browser</a>
+        <a class="btn" href="#abstract">Read online</a>
+      </div>
+    </div>
+    <dl class="meta">
+      <dt>Version</dt><dd>1.0</dd>
+      <dt>Date</dt><dd>7 October 2026</dd>
+      <dt>Network</dt><dd>Robinhood Chain (chain ID 4663)</dd>
+      <dt>Website</dt><dd><a href="https://accred.sh" target="_blank" rel="noopener">accred.sh</a></dd>
+      <dt>Contact</dt><dd><a href="https://x.com/useaccred" target="_blank" rel="noopener">x.com/useaccred</a></dd>
+      <dt>Published by</dt><dd>Accred</dd>
+    </dl>
+  </div>
+</section>
+
+<div class="wrap layout">
+  <aside class="toc" id="contents" aria-label="Table of contents">
+    <details open>
+      <summary>Contents</summary>
+      <ol id="tocList">
+        <li><a href="#abstract"><span class="n">—</span>Abstract</a></li>
+        <li><a href="#s1"><span class="n">1</span>Introduction</a></li>
+        <li><a href="#s2"><span class="n">2</span>Problem</a></li>
+        <li><a href="#s3"><span class="n">3</span>Solution</a></li>
+        <li><a href="#s4"><span class="n">4</span>Technical Architecture</a></li>
+        <li><a href="#s5"><span class="n">5</span>Infrastructure</a></li>
+        <li><a href="#s6"><span class="n">6</span>Products and Access Channels</a></li>
+        <li><a href="#s7"><span class="n">7</span>Buying, Swapping and Redeeming</a></li>
+        <li><a href="#s8"><span class="n">8</span>Staking and Cashback</a></li>
+        <li><a href="#s9"><span class="n">9</span>$CRED Tokenomics</a></li>
+        <li><a href="#s10"><span class="n">10</span>Security</a></li>
+        <li><a href="#s11"><span class="n">11</span>Math Models</a></li>
+        <li><a href="#s12"><span class="n">12</span>Legal</a></li>
+        <li><a href="#s13"><span class="n">13</span>Use Cases</a></li>
+        <li><a href="#s14"><span class="n">14</span>Competitive Analysis</a></li>
+        <li><a href="#s15"><span class="n">15</span>Status and Limitations</a></li>
+        <li><a href="#s16"><span class="n">16</span>Conclusion</a></li>
+        <li><a href="#s17"><span class="n">17</span>Official Links</a></li>
+        <li class="group">Appendices</li>
+        <li><a href="#appA"><span class="n">A</span>Verifying Claims On-Chain</a></li>
+        <li><a href="#appB"><span class="n">B</span>API Quick Reference</a></li>
+        <li><a href="#appC"><span class="n">C</span>Glossary</a></li>
+        <li><a href="#appD"><span class="n">D</span>Frequently Asked Questions</a></li>
+      </ol>
+    </details>
+  </aside>
+
+  <article>
+
+<section id="abstract" class="abstract">
+  <h2>Abstract</h2>
+  <p>Accred turns access to large language models into a digital asset that people own. Today, the cost of using artificial intelligence is locked inside accounts: a monthly subscription that cannot be transferred, a prepaid balance that cannot leave the vendor, or an API bill that arrives after the money has already been spent. Accred replaces these arrangements with <strong>LLM credits</strong>, an ERC-20 token on Robinhood Chain where 100 credits always represent one US dollar of model usage at the model's own listed price, with no markup added by Accred.</p>
+  <p>A credit sits in the user's own wallet. It can be sent to another wallet, deposited into a vault to be spent, swapped for or redeemed into other assets, or locked to earn a USDG yield. When a model is called, the exact cost is reserved from the user's vault balance on-chain before the request is sent to the provider. When the response returns, the true cost is settled and the same amount of credit is burned, so the on-chain supply always reflects credit that has not yet been used.</p>
+  <p>Credits can be bought with USDG, or with SOL, USDC and USDT from Solana. Tokenized stocks and a curated set of crypto tokens can be swapped into credits at a locked quote. Every swap earns a flat 10% cashback in USDG. Credits are spent through a web app, a Playground, platform API keys, OpenAI-compatible and Anthropic-compatible endpoints, a Model Context Protocol (MCP) server, x402 pay-per-call endpoints, a Chrome extension, a mobile wallet app, and a bot on X. Teams can pool credits and give members keys against a shared balance.</p>
+  <p><strong>$CRED</strong> is the native token of the Accred ecosystem, with a fixed total supply of 1,000,000,000 and 18 decimals, deployed on Robinhood Chain. It carries three utilities today: paying for credits with a 10% credit bonus and a permanent burn of the tokens paid, holding at least 100,000 tokens to unlock the Accred mobile app, and qualifying for holder rewards such as the October 2026 airdrop and the Accred hackathon. No tokens are allocated to a team.</p>
+  <p>This document describes the problem Accred addresses, the architecture of the system, its security model, the mathematics of its pricing, the properties of $CRED, and the legal context in which the product is offered.</p>
+</section>
+
+<section id="s1">
+  <h2><span class="n">1</span>Introduction<a class="anchor" href="#s1">#</a></h2>
+  <h3 id="s1-1"><span class="n">1.1</span>Background</h3>
+  <p>Large language models have become a basic input to software, research, writing, customer service, design and engineering. Access to them is sold in three main ways. Consumer chat products sell a flat monthly subscription. Developer platforms sell metered API access, billed in arrears or against a prepaid balance. Aggregators resell access to several providers behind one account and one invoice. In all three cases the user ends up holding a claim against a single company that the user can neither move, sell, split nor verify independently.</p>
+  <p>At the same time, a growing group of people hold their wealth on public blockchains. Their assets are programmable, transferable and auditable, but they are cut off from everyday services. To use an AI model they must sell tokens, move funds to a bank account, wait for settlement, and then pay with a card. Each step costs time and money, and the final balance is again an opaque entry in someone else's database.</p>
+  <p>Accred sits between these two worlds. It makes AI usage a first-class on-chain asset, so that the same wallet that holds a person's tokens can also hold, send and spend their model usage.</p>
+
+  <h3 id="s1-2"><span class="n">1.2</span>What Accred is</h3>
+  <p>Accred is a protocol and a set of products built around a single idea: a unit of AI usage should be a token. The central pieces are:</p>
+  <dl class="defs">
+    <dt>LLM credits</dt><dd>A transferable ERC-20 token on Robinhood Chain. 100 credits represent one US dollar of model usage at provider list price.</dd>
+    <dt>The credit vault</dt><dd>A smart contract in which users deposit credits to spend them. It reserves funds before a request, settles and burns the actual cost afterwards, and releases anything unused.</dd>
+    <dt>The gateway</dt><dd>A server that authenticates users and API keys, calls model providers, meters tokens exactly, and drives the vault so that every charge is backed by on-chain evidence.</dd>
+    <dt>Entry and exit paths</dt><dd>Direct purchase with USDG or Solana assets, swaps from tokenized stocks and crypto, same-asset redemption, and staking.</dd>
+    <dt>Access channels</dt><dd>Web, API, editors and SDKs, MCP clients, x402 agents, a browser extension, a mobile wallet and a social bot.</dd>
+    <dt>$CRED</dt><dd>The ecosystem token, with utility in purchases, access and rewards.</dd>
+  </dl>
+
+  <h3 id="s1-3"><span class="n">1.3</span>Design principles</h3>
+  <ol>
+    <li><strong>Ownership first.</strong> Credits live in the user's wallet until the moment they are deposited to be spent. Wallet login alone never authorizes a transaction; every movement of funds is signed by the owner.</li>
+    <li><strong>Zero markup.</strong> Accred charges the model's own listed price. A fixed conversion of 100 credits to one dollar means the price of a request in credits can be computed from the public price list by anyone.</li>
+    <li><strong>Evidence before action.</strong> A model call is made only after an on-chain reservation is confirmed. Credit is issued only after a payment is verified field by field. Burns are accepted as proof only when supply and balance visibly decrease.</li>
+    <li><strong>Wallet to wallet.</strong> Accred does not park customer funds inside contracts it cannot recover from. Payouts such as redemptions, cashback and staking rewards are direct transfers from Accred's wallets to the user's wallet.</li>
+    <li><strong>Fail closed.</strong> If a configuration, price source or chain check is missing, the feature is unavailable rather than guessed.</li>
+    <li><strong>Honest limits.</strong> Features that are not available are described as unavailable. Illustrative numbers are labelled as examples.</li>
+  </ol>
+
+  <h3 id="s1-4"><span class="n">1.4</span>The role of $CRED</h3>
+  <p>Credits are a unit of account for AI usage and are meant to be spent. $CRED is the token that aligns the community around the platform. A user who pays for credits with $CRED receives 10% extra credit, and the $CRED paid is destroyed after the credit is issued. Holding 100,000 $CRED unlocks the mobile wallet app. Holders have received an airdrop of credits, and rewards for Accred's hackathon include $CRED. The supply is fixed, and Accred allocates no tokens to a team.</p>
+  <p>It is important to keep the two tokens apart. Credits are consumable and priced against the dollar cost of model usage. $CRED is a market-priced token whose value is set by supply and demand, and which is not redeemable for credits or for any fixed amount of any asset.</p>
+
+  <h3 id="s1-5"><span class="n">1.5</span>Scope and status of this document</h3>
+  <p>This is Version 1.0 of the Accred whitepaper, dated 7 October 2026. It describes the system as it is built and deployed on Robinhood Chain at that date. Where a capability depends on an approval or a third party, for example listing in a mobile app store, the document says so. Figures that change over time, such as $CRED supply and burn totals, are read directly from the chain and dated. This document is informational. It is not an offer of securities, investment advice, or a promise of any return, and it should be read together with the <a href="#s12">Legal</a> section.</p>
+</section>
+
+<section id="s2">
+  <h2><span class="n">2</span>Problem<a class="anchor" href="#s2">#</a></h2>
+  <h3 id="s2-1"><span class="n">2.1</span>AI usage is locked inside accounts</h3>
+  <p>A subscription to an AI product is a promise from a single company to provide access under that company's terms. It cannot be gifted to a friend, split between a team, resold, or used outside the vendor's own application. Prepaid API balances are similar. They are numbers in a database, usually non-refundable, often expiring, and impossible to move. The result is stranded value: balances that go unused, plans that are over-provisioned for fear of hitting a limit, and forfeited credit when a user switches tools.</p>
+  <h3 id="s2-2"><span class="n">2.2</span>Pricing is opaque and fragmented</h3>
+  <p>Each provider has its own price list, units, tiers, rate limits and billing cycle. Aggregators add a margin, a fixed fee or a subscription on top. A developer who wants to compare three models must read three price pages, convert between per-million-token rates and per-seat plans, and then estimate usage. The cost of a single request is rarely visible at the time it is made, and the invoice that arrives later cannot be tied back to individual calls without extra tooling.</p>
+  <h3 id="s2-3"><span class="n">2.3</span>Crypto holders cannot spend what they hold</h3>
+  <p>People who hold tokenized stocks, stablecoins and other assets on-chain face a long path to pay for AI. They sell, bridge or withdraw, then pay with a fiat card tied to an identity and a billing country. The path adds fees and delay, and it breaks the property that made the assets attractive in the first place: that they are directly usable from a wallet.</p>
+  <h3 id="s2-4"><span class="n">2.4</span>Autonomous software needs a payment rail</h3>
+  <p>AI agents and automated workflows call models continuously and without a human in the loop. They cannot fill in a checkout form. They need a way to pay per call, with a price known before the call, with no account to register, and with a guarantee that a failed call is not charged. Existing rails were designed for people, not for programs.</p>
+  <h3 id="s2-5"><span class="n">2.5</span>Trust in the meter</h3>
+  <p>When a service charges by usage, the customer must trust the meter. A meter that is internal to the vendor can drift, double count, or fail silently. Disputes are resolved by support tickets rather than by evidence. There is no neutral, tamper-evident record that says: this request reserved this amount, consumed this much, and the rest was returned.</p>
+  <h3 id="s2-6"><span class="n">2.6</span>Summary of the problems</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Problem</th><th>Consequence</th></tr></thead>
+    <tbody>
+      <tr><td>Locked, non-transferable balances</td><td>Stranded value, no gifting, no team sharing, no exit</td></tr>
+      <tr><td>Fragmented, marked-up pricing</td><td>Hard to compare, hard to predict, margin paid on every call</td></tr>
+      <tr><td>Fiat-only checkout</td><td>Crypto holders must leave the chain to pay for AI</td></tr>
+      <tr><td>No agent-native payment</td><td>Autonomous software cannot pay per call</td></tr>
+      <tr><td>Internal, unverifiable meters</td><td>Charges rest on trust, disputes rest on tickets</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="s3">
+  <h2><span class="n">3</span>Solution<a class="anchor" href="#s3">#</a></h2>
+  <h3 id="s3-1"><span class="n">3.1</span>A token for AI usage</h3>
+  <p>Accred represents AI usage as an ERC-20 token. The conversion is fixed and simple: <strong>100 credits = US$1 of model usage</strong>. A model that costs three dollars per million input tokens costs 300 credits per million input tokens. Because the unit is a standard token, it inherits everything wallets and block explorers already provide: balances, transfers, history and public verification.</p>
+  <h3 id="s3-2"><span class="n">3.2</span>Zero markup and one balance</h3>
+  <p>Credits are priced at each model's own listed cost, read from a live public catalogue. Accred adds no markup to model prices. All supported providers share one balance, so a user does not have to guess in advance how much to put with each vendor. The catalogue shows, for every model, the provider, the exact model identifier, the input and output price per million tokens, its capabilities, and whether it is currently available.</p>
+  <h3 id="s3-3"><span class="n">3.3</span>Reserve, settle, burn</h3>
+  <p>Every metered request follows the same three-step protocol against the credit vault:</p>
+  <ol>
+    <li><strong>Reserve.</strong> Before the provider is called, the gateway reserves the worst-case cost of the request from the user's vault balance. The reservation is a transaction on Robinhood Chain and must be confirmed.</li>
+    <li><strong>Settle.</strong> After the provider answers, the gateway computes the exact cost from the provider's reported token usage and settles it. The settled credits are burned, and the vault emits an event that links the burn to the request.</li>
+    <li><strong>Release.</strong> The unspent part of the reservation returns to the user's available balance. If the call fails before a provider outcome is known, the whole reservation is released.</li>
+  </ol>
+  <p>Because credits are burned when used, the supply of the token tracks credit that has not yet been consumed. Anyone can check that the vault burned what the receipt says it burned.</p>
+  <h3 id="s3-4"><span class="n">3.4</span>Many ways in, many ways out</h3>
+  <p>Users can buy credits directly with USDG on Robinhood Chain, or with SOL, USDC and USDT on Solana. They can swap tokenized stocks and a curated list of crypto tokens into credits. They can redeem credits back into the same asset they swapped in, subject to availability. They can stake credits for a fixed term to earn a USDG yield, and they receive a flat 10% cashback in USDG on every swap.</p>
+  <h3 id="s3-5"><span class="n">3.5</span>One balance, every surface</h3>
+  <p>The same wallet balance works across the web app, the Playground, platform API keys, OpenAI-compatible and Anthropic-compatible routes for editors and SDKs, an MCP server for AI assistants, x402 endpoints for agents, a Chrome extension, a mobile wallet app and a bot on X. A team can pool credits and share them across members with approval controls.</p>
+  <h3 id="s3-6"><span class="n">3.6</span>How the pieces fit</h3>
+  <figure class="fig">
+    <div class="flow">
+      <div class="box"><b>User wallet</b><span>credits, $CRED, USDG</span></div>
+      <div class="arr">→</div>
+      <div class="box"><b>Credit vault</b><span>reserve / settle / burn</span></div>
+      <div class="arr">→</div>
+      <div class="box"><b>Gateway</b><span>auth, meter, route</span></div>
+      <div class="arr">→</div>
+      <div class="box"><b>Models</b><span>providers</span></div>
+    </div>
+    <div class="flow" style="margin-top:8px">
+      <div class="box" style="background:transparent;border-style:dashed"><b style="font-weight:500">Buy / swap / stake</b><span>into the wallet</span></div>
+      <div class="box" style="background:transparent;border-style:dashed"><b style="font-weight:500">Web, API, MCP, x402</b><span>into the gateway</span></div>
+      <div class="box" style="background:transparent;border-style:dashed"><b style="font-weight:500">Robinhood Chain 4663</b><span>record of truth</span></div>
+    </div>
+    <figcaption><b>Figure 1.</b> High-level flow: wallet funds the vault, the gateway drives the vault, the provider answers.</figcaption>
+  </figure>
+  <h3 id="s3-7"><span class="n">3.7</span>What the solution changes</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Before</th><th>With Accred</th></tr></thead>
+    <tbody>
+      <tr><td>Balance is a database row</td><td>Balance is a token in the user's wallet</td></tr>
+      <tr><td>Price depends on vendor and plan</td><td>Price equals the model's list price, 100 credits per dollar</td></tr>
+      <tr><td>Checkout needs a card</td><td>Pay from a wallet with USDG, Solana assets, stocks, tokens or $CRED</td></tr>
+      <tr><td>Agents cannot pay</td><td>x402 pay-per-call with a price known before the call</td></tr>
+      <tr><td>Meter is internal</td><td>Reserve and burn events are public on-chain</td></tr>
+      <tr><td>Unused balance is lost or locked</td><td>Unused reservations are released; credits can be sent, redeemed or staked</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="s4">
+  <h2><span class="n">4</span>Technical Architecture<a class="anchor" href="#s4">#</a></h2>
+  <h3 id="s4-1"><span class="n">4.1</span>Layers</h3>
+  <p>Accred is organized in four layers. Each layer can be inspected and reasoned about on its own.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Layer</th><th>Responsibility</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Chain layer</strong></td><td>The credit token, the vault, the purchase and settlement contracts, and the staking contract, all on Robinhood Chain. This layer holds balances and is the record of truth.</td></tr>
+      <tr><td><strong>Settlement layer</strong></td><td>Verifies incoming payments, quotes prices, issues credit, pays out redemptions, cashback and staking rewards, and burns $CRED.</td></tr>
+      <tr><td><strong>Gateway layer</strong></td><td>Authenticates users and keys, applies limits, calls model providers, meters usage, and drives reserve, settle and release on the vault.</td></tr>
+      <tr><td><strong>Access layer</strong></td><td>The web app, Playground, API routes, MCP server, x402 endpoints, Chrome extension, mobile app and X bot.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s4-2"><span class="n">4.2</span>Smart contracts</h3>
+  <p>The following contracts are deployed on Robinhood Chain mainnet (chain ID 4663). Addresses are public and can be checked on the chain's explorer. Each address below links to it.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Contract</th><th>Address</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td><strong>LLMCredit</strong></td><td class="addr"><a href="https://robin.etherscan.io/address/0x854Af176109Cf2b377E2f90C25e57F4A67f10cf4" target="_blank" rel="noopener">0x854Af176109Cf2b377E2f90C25e57F4A67f10cf4</a></td><td>The credit token (ERC-20, 18 decimals)</td></tr>
+      <tr><td><strong>LLMCreditVault</strong></td><td class="addr"><a href="https://robin.etherscan.io/address/0xE030BABE6CFD26042C71515C153C4b35bbA4e56A" target="_blank" rel="noopener">0xE030BABE6CFD26042C71515C153C4b35bbA4e56A</a></td><td>Deposits, reservations, settlement burns, release, withdrawal</td></tr>
+      <tr><td><strong>Credit purchase contract</strong></td><td class="addr"><a href="https://robin.etherscan.io/address/0xaA152Bb6217a8B4790346E9461A06B02d4E91a06" target="_blank" rel="noopener">0xaA152Bb6217a8B4790346E9461A06B02d4E91a06</a></td><td>Signed-quote purchase of credits against an eligible token</td></tr>
+      <tr><td><strong>SolanaCreditSettlement</strong></td><td class="addr"><a href="https://robin.etherscan.io/address/0x1Fea14500Be73fEFA0c904Cd4343193cdD4f3364" target="_blank" rel="noopener">0x1Fea14500Be73fEFA0c904Cd4343193cdD4f3364</a></td><td>Credit issuance after verified Solana payments</td></tr>
+      <tr><td><strong>LLMCreditRedeemer</strong></td><td class="addr"><a href="https://robin.etherscan.io/address/0x412d9C246810Be376Af474d4785447a26C218F1c" target="_blank" rel="noopener">0x412d9C246810Be376Af474d4785447a26C218F1c</a></td><td>Redemption contract (redemptions today are paid as direct wallet transfers)</td></tr>
+      <tr><td><strong>CreditStaking</strong></td><td class="addr"><a href="https://robin.etherscan.io/address/0x2f696C76Bf71a93b5c3448763732a37e81CbDB06" target="_blank" rel="noopener">0x2f696C76Bf71a93b5c3448763732a37e81CbDB06</a></td><td>Lock-only staking of credit principal</td></tr>
+      <tr><td><strong>USDG</strong> (external)</td><td class="addr"><a href="https://robin.etherscan.io/address/0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168" target="_blank" rel="noopener">0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168</a></td><td>The dollar stablecoin used for pricing, payouts and x402</td></tr>
+      <tr><td><strong>$CRED</strong> (external to the credit system)</td><td class="addr"><a href="https://robin.etherscan.io/address/0xAAb950F473370aAe2Fe3A469a8099e9bD2f4ef26" target="_blank" rel="noopener">0xAAb950F473370aAe2Fe3A469a8099e9bD2f4ef26</a></td><td>The Accred ecosystem token</td></tr>
+    </tbody>
+  </table></div>
+  <p class="cap"><b>Table 1.</b> Deployed contracts. The vault and token were deployed at block 77,597,442.</p>
+
+  <h3 id="s4-3"><span class="n">4.3</span>The credit token</h3>
+  <p>The credit token follows the ERC-20 standard with 18 decimals. One credit is 10<sup>18</sup> base units. Accounting inside the platform uses <strong>microcredits</strong>, where one microcredit is 10<sup>-6</sup> credit and therefore 10<sup>12</sup> base units. Using a fixed small unit lets the platform price requests that cost a fraction of one credit without floating-point error. A positive charge is always rounded up to the next microcredit, so a real cost is never truncated to zero.</p>
+  <p>Only authorized parties can issue or burn credit through the system's roles. Issuance happens when a payment has been verified. Burning happens when the vault settles consumption, and in the redemption path. Ordinary holders can transfer credits freely at any time.</p>
+
+  <h3 id="s4-4"><span class="n">4.4</span>The vault</h3>
+  <p>The vault is where credits become spendable. A user deposits credits from their wallet into the vault. The vault tracks three numbers per account:</p>
+  <ul>
+    <li><strong>deposited:</strong> credits the user has placed in the vault;</li>
+    <li><strong>reserved:</strong> credits currently held against in-flight requests;</li>
+    <li><strong>available:</strong> deposited minus reserved, which the user can still spend or withdraw.</li>
+  </ul>
+  <p>Three vault operations drive metering: <code>reserve(account, requestId, amount)</code>, <code>settle</code> and <code>release</code>. Each request has a globally unique 32-byte request ID. A reservation is stored under that ID, so settlement and release refer to exactly one hold. Unreserved deposits are always withdrawable by their owner.</p>
+
+  <h3 id="s4-5"><span class="n">4.5</span>Lifecycle of a request</h3>
+  <figure class="fig">
+    <svg viewBox="0 0 720 300" role="img" aria-label="Sequence diagram of a metered request between client, gateway, vault and provider" font-family="Inter, system-ui, sans-serif" font-size="13">
+      <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+      <g fill="currentColor" font-weight="600" text-anchor="middle">
+        <text x="80" y="22">Client</text><text x="270" y="22">Gateway</text><text x="460" y="22">Vault (chain)</text><text x="640" y="22">Provider</text>
+      </g>
+      <g stroke="currentColor" stroke-opacity=".25" stroke-dasharray="4 4">
+        <line x1="80" y1="34" x2="80" y2="290"/><line x1="270" y1="34" x2="270" y2="290"/><line x1="460" y1="34" x2="460" y2="290"/><line x1="640" y1="34" x2="640" y2="290"/>
+      </g>
+      <g stroke="currentColor" stroke-width="1.5" fill="none" marker-end="url(#ah)">
+        <line x1="84" y1="62" x2="264" y2="62"/>
+        <line x1="274" y1="102" x2="454" y2="102"/>
+        <line x1="456" y1="130" x2="276" y2="130"/>
+        <line x1="274" y1="170" x2="634" y2="170"/>
+        <line x1="636" y1="198" x2="276" y2="198"/>
+        <line x1="274" y1="238" x2="454" y2="238"/>
+        <line x1="266" y1="276" x2="86" y2="276"/>
+      </g>
+      <g fill="currentColor" font-size="12">
+        <text x="175" y="55" text-anchor="middle">1. request + key + Idempotency-Key</text>
+        <text x="365" y="95" text-anchor="middle">2. reserve worst-case credit</text>
+        <text x="365" y="145" text-anchor="middle" fill-opacity=".7">confirmed</text>
+        <text x="455" y="163" text-anchor="middle">3. call model</text>
+        <text x="455" y="213" text-anchor="middle" fill-opacity=".7">usage and cost</text>
+        <text x="365" y="231" text-anchor="middle">4. settle exact cost, burn, release rest</text>
+        <text x="175" y="269" text-anchor="middle">5. answer + exact receipt</text>
+      </g>
+    </svg>
+    <figcaption><b>Figure 2.</b> Sequence of a metered request.</figcaption>
+  </figure>
+  <ol>
+    <li><strong>Authenticate.</strong> The gateway identifies the owner from a platform key, a session or an x402 payment.</li>
+    <li><strong>Validate.</strong> The request must be well formed, within size bounds, within the owner's rate limits and the daily budget, and carry an idempotency key.</li>
+    <li><strong>Reserve.</strong> The gateway submits <code>reserve</code> for the worst-case cost and waits for confirmation. The balance is read from the vault itself, not from a cached index.</li>
+    <li><strong>Dispatch.</strong> The gateway records the dispatch time and calls the provider once. A request with a recorded dispatch is never sent upstream again.</li>
+    <li><strong>Settle.</strong> The gateway computes the exact charge from the provider's reported usage, settles it on the vault, and verifies that the vault emitted an exact burn event for that request.</li>
+    <li><strong>Respond.</strong> The caller receives the answer and a receipt: <code>creditsChargedExact</code>, <code>providerCostUsdExact</code>, the credit unit, and cashback information where present.</li>
+  </ol>
+
+  <h3 id="s4-6"><span class="n">4.6</span>The gateway</h3>
+  <h4>Authentication</h4>
+  <p>Web sessions use a verified login. API keys are created per owner and carry an immutable snapshot of the owner's verified chain-4663 wallet at creation time. If the owner later links a different wallet, existing keys do not silently follow it; a new key must be created. Mobile and wallet-native clients authenticate by signing a challenge with the wallet (EIP-191). MCP clients use OAuth with dynamic client registration and PKCE.</p>
+  <h4>Idempotency</h4>
+  <p>Every inference request carries an idempotency key of 8 to 128 characters, bound to a SHA-256 fingerprint of the normalized request and the authenticated owner. Reusing a key with different input returns a conflict. Repeating the same request returns the saved response and does not charge again. Clients that cannot send the header, such as editors, have one generated for each request.</p>
+  <h4>Limits</h4>
+  <p>The gateway applies a daily budget in microcredits, a per-owner and a per-key rate limit per rolling minute, and size bounds before it reserves anything. Requests are bounded to 400,000 UTF-8 bytes of serialized messages, and output is bounded to 8,192 tokens. Signer transactions are serialized across processes with a database advisory lock, and locally with a nonce manager, so concurrent requests do not collide on the chain.</p>
+  <h4>Fail-closed behavior</h4>
+  <p>Gateway writes require explicit enablement and a correct network configuration. If the chain ID differs from 4663, or the vault, the RPC or the authorized signer is missing, the gateway returns an unavailable response and performs no model call.</p>
+
+  <h3 id="s4-7"><span class="n">4.7</span>Failure handling and reconciliation</h3>
+  <p>Blockchains and providers both fail in partial ways. The design assumes this.</p>
+  <ul>
+    <li><strong>Failure before dispatch.</strong> The reservation is released; the user is not charged.</li>
+    <li><strong>Failure after dispatch with unknown outcome.</strong> The hold is released only after the request's reservation is proven on-chain. Any uncertain provider cost is absorbed by the platform and is not charged to the customer.</li>
+    <li><strong>Settlement pending.</strong> Chain evidence is rechecked. A reconcile endpoint, scoped to the owner, re-reads the exact request events and returns a final state, or a pending state while evidence is still missing. It never re-dispatches the model call.</li>
+    <li><strong>Account-wide snapshots.</strong> These are shown for display only. They never serve as proof that an operation succeeded.</li>
+  </ul>
+
+  <h3 id="s4-8"><span class="n">4.8</span>Data stores</h3>
+  <p>A relational database stores the off-chain ledger: owners, API keys (hashed), idempotency records, request ledger entries, settlement operations, team pools, swap quotes and sessions, burn records, X bot state and airdrop records. Ledger values are stored as integer microcredits. Token base units are never placed in a database integer column.</p>
+  <p>Object storage holds public downloads such as the Android package. Secrets and private keys are kept in managed environment secrets and are never returned in responses or logs.</p>
+</section>
+
+<section id="s5">
+  <h2><span class="n">5</span>Infrastructure<a class="anchor" href="#s5">#</a></h2>
+  <h3 id="s5-1"><span class="n">5.1</span>Robinhood Chain</h3>
+  <p>Accred operates on Robinhood Chain mainnet, chain ID 4663. The chain is an Ethereum-compatible network with a sequencer, which gives fast inclusion of transactions. USDG is the dollar stablecoin used for pricing, payouts, cashback, staking rewards and x402. Block explorer links in Accred's products use the chain's Etherscan-based explorer at <a href="https://robin.etherscan.io" target="_blank" rel="noopener">robin.etherscan.io</a>.</p>
+  <h4>Confirmation policy</h4>
+  <p>The sequencer confirms transactions quickly, while the chain's finality on its settlement layer can lag by many minutes. To keep purchases, redemptions and payouts feeling instant, Accred counts a Robinhood Chain receipt as confirmed after a small number of blocks (three by default). This is a deliberate trade. It is acceptable because every payment is still verified field by field: sender, token, amount and recipient must match the expected values exactly. Solana payments use the stricter finalized commitment.</p>
+  <h4>State reads</h4>
+  <p>Public RPC nodes may prune state for older blocks. Accred reads state from a fixed confirmation-depth block when the finalized block is not readable, so a missing historical state does not make the system unavailable.</p>
+
+  <h3 id="s5-2"><span class="n">5.2</span>Solana payment path</h3>
+  <p>Solana is accepted as a payment network for SOL, USDC and USDT. Credits are still issued on Robinhood Chain after a verified Solana settlement. A user opens a deposit session and is given a unique, exact amount to send. Because the amount is unique among open sessions, a manual payment from any wallet can be attributed to exactly one session. There is no Solana wallet login, so no Solana private key ever touches Accred. Verification uses finalized commitment on Solana.</p>
+
+  <h3 id="s5-3"><span class="n">5.3</span>Price infrastructure</h3>
+  <p>Swaps and redemptions need a price for the asset being exchanged. Accred uses several independent sources and refuses to quote when they disagree or are missing.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Asset class</th><th>Sources and checks</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Tokenized stocks</strong></td><td>Exchange quotes from Nasdaq and Yahoo, cross-checked against the on-chain Uniswap v3 pool at the trade size. The maximum permitted gap is 5%, and the lower value is used.</td></tr>
+      <tr><td><strong>ETH</strong></td><td>Coinbase and CoinGecko prices that must agree within 2%.</td></tr>
+      <tr><td><strong>Crypto tokens</strong></td><td>DexScreener and GeckoTerminal market data, cross-checked against the on-chain Uniswap WETH pool at trade size (5% maximum gap, 3% spread).</td></tr>
+      <tr><td><strong>USDG</strong></td><td>Treated as one dollar.</td></tr>
+    </tbody>
+  </table></div>
+  <p>When no correct price exists, the asset is shown as unavailable with the message "Low liquidity — swap not available". The platform does not display balances or reasons that would reveal reserves.</p>
+
+  <h3 id="s5-4"><span class="n">5.4</span>Model providers</h3>
+  <p>Model access is assembled from two sources. A static allowlist covers models from OpenAI, Anthropic and Google Gemini, each with an exact, operator-maintained cost for input and output tokens. A live public catalogue from an aggregation service covers additional models, with prices read from the catalogue itself. Model identifiers are looked up in these lists; a caller can never supply a URL or endpoint, which removes a whole class of request-forgery risk. A model is enabled only when its exact price is known. No guessed or zero prices are used.</p>
+  <p>Image generation, audio generation, transcription and typed-decision endpoints are listed as unsupported until metered handlers and exact pricing exist. They cannot bypass reservation by being sent to the chat endpoint.</p>
+
+  <h3 id="s5-5"><span class="n">5.5</span>Wallet roles</h3>
+  <p>Accred separates the keys that perform different jobs. A settlement wallet receives incoming assets and issues credit. A separate payout wallet pays cashback and staking rewards, so that a problem with one role does not expose the other. A quote-signing key signs purchase quotes. Private keys are held only as managed secrets and are never displayed. User wallets are never custodied: Accred does not hold user keys, and the mobile app keeps the user's key on the device.</p>
+
+  <h3 id="s5-6"><span class="n">5.6</span>Hosting and availability</h3>
+  <p>The web app, API and gateway run on managed cloud infrastructure with a managed PostgreSQL database and object storage. The API serves all channels from one codebase, so rate limits, budgets and the reserve and settle engine behave identically for every channel. Background workers reconcile pending settlements, retry burns and pending payouts, and expire stale sessions.</p>
+
+  <h3 id="s5-7"><span class="n">5.7</span>Observability</h3>
+  <p>Each request produces durable records: dispatch time, vault transaction hashes, provider usage and cost. These feed the usage and accounting views that owners can query. Exact decimal strings are the source of truth, and cashback is reported as empty unless there is an authoritative confirmed receipt.</p>
+</section>
+
+<section id="s6">
+  <h2><span class="n">6</span>Products and Access Channels<a class="anchor" href="#s6">#</a></h2>
+  <p>Every channel draws from the same wallet balance and uses the same metering engine. A user does not have to choose a channel in advance, and a balance deposited from one channel can be spent from another.</p>
+  <h3 id="s6-1"><span class="n">6.1</span>Web app</h3>
+  <p>The web app at <a href="https://accred.sh" target="_blank" rel="noopener">accred.sh</a> is the main workspace. It contains a dashboard, a Buy page, a Swap page that flips between swap and redeem, a Wallet area for transfers, activation of credits into the vault and withdrawal, a Credits view, a Staking page, API key management, a Playground, team pools, settings and usage history. Users sign in with a verified login and link a wallet. Any action that moves funds is signed by the wallet; being logged in is never enough to authorize a transfer.</p>
+  <h3 id="s6-2"><span class="n">6.2</span>Playground</h3>
+  <p>The Playground lets a user pick any available model, write a prompt and see the answer together with the exact credits charged. Only models that are actually available are listed. It uses the same reserve and settle path as the API, so what the user sees in the Playground is what the API would charge.</p>
+  <h3 id="s6-3"><span class="n">6.3</span>Platform API</h3>
+  <p>The native customer API is a single endpoint that accepts a model, a list of messages and an optional output limit.</p>
+<pre><code>POST /api/customer/v1/chat/completions
+X-Platform-API-Key: &lt;key&gt;
+Idempotency-Key: &lt;8-128 characters&gt;
+
+{ "model": "&lt;catalogue model id&gt;",
+  "messages": [{ "role": "user", "content": "..." }],
+  "maxOutputTokens": 1024 }</code></pre>
+  <p>The response contains the answer, token usage, and an exact receipt: <code>creditsChargedExact</code>, <code>providerCostUsdExact</code>, <code>creditUnit</code> and <code>cashbackUsdExact</code>. Other endpoints list the public model catalogue, return owner-scoped usage and accounting, and reconcile a ledger entry against chain evidence.</p>
+  <h3 id="s6-4"><span class="n">6.4</span>OpenAI-compatible and Anthropic-compatible routes</h3>
+  <p>Editors, SDKs and tools that cannot send custom headers use compatible routes. They translate the wire format only. Every request still runs through the same reservation, limits and budgets as the native route.</p>
+  <ul>
+    <li><code>POST /api/openai/v1/chat/completions</code> in the OpenAI Chat Completions shape, including streaming with server-sent events that end in <code>data: [DONE]</code>.</li>
+    <li><code>GET /api/openai/v1/models</code> returns the available text models.</li>
+    <li><code>POST /api/customer/v1/messages</code> in the Anthropic Messages shape, including streaming, and a token-count route for input estimates.</li>
+  </ul>
+  <p>The platform key may be sent as a bearer token, as <code>x-api-key</code>, or as <code>X-Platform-API-Key</code>. Streaming replays the finished and settled response as chunks, with keepalive frames sent while the reservation and provider call are in flight. These routes are text only. A request that includes tool definitions, images or tool-role messages is rejected, so agentic tool use is not supported on them.</p>
+  <h3 id="s6-5"><span class="n">6.5</span>MCP server</h3>
+  <p>Accred runs a Model Context Protocol server over streamable HTTP. An AI assistant that supports MCP connectors can sign the user in through OAuth with PKCE and then use four tools.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Tool</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><code>accred_account</code></td><td>Shows the signed-in user's deposited, reserved and available credits.</td></tr>
+      <tr><td><code>accred_models</code></td><td>Lists available models and their per-million-token costs.</td></tr>
+      <tr><td><code>accred_chat</code></td><td>Sends a prompt to a chosen model and pays with the user's credits, returning the reply and the exact credits charged.</td></tr>
+      <tr><td><code>accred_swap_link</code></td><td>Returns a link to the app where the user can swap tokens for credits.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Wallet signing never happens inside a chat. Swaps are signed by the user's own wallet in the app. Connector tokens are limited to MCP routes and cannot call wallet or quote routes directly.</p>
+  <h3 id="s6-6"><span class="n">6.6</span>x402 pay-per-call</h3>
+  <p>x402 is an open scheme in which a server answers an unpaid request with HTTP 402 and a machine-readable payment requirement, and the client retries with a signed payment. Accred runs a real x402 service on Robinhood Chain. Because USDG does not support the authorization standards used by some other stablecoins, Accred uses the Permit2 transfer method through the canonical x402 Permit2 proxy that is already deployed on chain 4663. Accred operates its own facilitator, since no external facilitator supports this chain, and pays the gas for settlement.</p>
+  <ol>
+    <li>The client requests a model completion without payment and receives a 402 response with a price.</li>
+    <li>The price is the worst case for the request: input size plus the requested maximum output, at the model's own cost, with no markup.</li>
+    <li>The client signs a Permit2 payment in USDG and retries.</li>
+    <li>The facilitator verifies the signature, the model runs, and only then is the payment settled. If the model call fails, nothing is charged.</li>
+  </ol>
+  <p>The payer needs a one-time USDG approval to Permit2. A per-payer in-flight lock prevents double use of a single authorization. An agent needs no account and no API key.</p>
+  <h3 id="s6-7"><span class="n">6.7</span>Teams</h3>
+  <p>A team is a shared credit pool kept in the platform's ledger, not in a contract. Members join with approval, which is on by default, and a person may belong to several teams. A member funds the pool by reserving and settling credits from their own vault balance. Pool deposits are one-way and are not redeemable; this is disclosed wherever deposits are made. Team API keys draw from the pool. To encourage adoption, Accred sponsors 1,000 credits to a team once per owner, granted when at least two active members besides the owner have joined.</p>
+  <h3 id="s6-8"><span class="n">6.8</span>Chrome extension</h3>
+  <p>The Accred Chrome extension is live on the Chrome Web Store. It lets a user analyze anything or ask Accred from any tab without leaving the page, paid with the user's Accred credit. The wallet key is encrypted with the user's password and stays in the browser. If both the password and the saved private key are lost, the wallet cannot be restored.</p>
+  <h3 id="s6-9"><span class="n">6.9</span>Mobile wallet app</h3>
+  <p>The Accred mobile app is a self-contained wallet. A user creates or imports a wallet and signs in by signing a challenge; there is no connection code to enter. The private key stays on the device in secure storage. The app talks to the public RPC directly and validates swap quotes before it asks the user to sign. The app supports one wallet. Access to the app is gated by a holder code: a single-use code, valid for seven days, issued in web Settings to owners who hold at least 100,000 $CRED across their verified wallets, checked live on-chain. A wallet that has redeemed a code does not need another on later sign-ins. An Android package is available for download. Listings in the Google Play Store and the Apple App Store are pending store approval.</p>
+  <h3 id="s6-10"><span class="n">6.10</span>Accred Agent and Builder</h3>
+  <p>Accred Agent, at <a href="https://agent.accred.sh" target="_blank" rel="noopener">agent.accred.sh</a>, runs jobs on the user's behalf. The user describes a job in plain words, connects the apps it may use (such as Telegram, Gmail in read-only mode, Slack, Discord, GitHub or any HTTP API), sets a budget, and the job runs on a schedule, on a webhook, or when a button is pressed. Every run is paid from the user's activated credit through a platform API key. The Agent also offers trading agents that operate on Robinhood Chain inside limits the user sets. Accred Builder is available at <a href="https://build.accred.sh" target="_blank" rel="noopener">build.accred.sh</a>.</p>
+  <h3 id="s6-11"><span class="n">6.11</span>The X bot</h3>
+  <p>The Accred account on X, <a href="https://x.com/useaccred" target="_blank" rel="noopener">@useAccred</a>, runs a bot that reads mentions. Read-only commands report balance, status, usage, cashback and help, and never disclose private wallet usage publicly. One action command is supported: <code>@useAccred send N credits to @user</code>. The sender must have linked a wallet and set an ERC-20 allowance to Accred's payout wallet for the credit token. The send is a wallet-to-wallet transfer, and the reply includes a transaction link. If the recipient has no linked wallet, the credits wait as a pending claim and are refunded to the sender after 30 days if unclaimed. No buy, swap, redeem or stake action can be triggered from a post.</p>
+</section>
+
+<section id="s7">
+  <h2><span class="n">7</span>Buying, Swapping and Redeeming Credits<a class="anchor" href="#s7">#</a></h2>
+  <h3 id="s7-1"><span class="n">7.1</span>Direct purchase with USDG</h3>
+  <p>A user who wants credits directly sends USDG from their wallet to Accred's settlement wallet. Accred verifies the transfer field by field: sender, token, amount and recipient. Once it has the required confirmations, credits are issued to the user at the fixed rate. One USDG buys 100 credits.</p>
+  <h3 id="s7-2"><span class="n">7.2</span>Purchase with Solana assets</h3>
+  <p>A user opens a session, receives a unique exact amount of SOL, USDC or USDT to send, and pays from any Solana wallet. After finalized confirmation, the payment is matched to the session. The amount is valued at the verified price and credits are issued on Robinhood Chain to the user's linked wallet.</p>
+  <h3 id="s7-3"><span class="n">7.3</span>Swapping assets into credits</h3>
+  <p>Swaps use a direct-deposit model. The user asks for a quote, receives a locked price for a short window, and then transfers the asset straight to Accred's settlement wallet. Credits are issued at the quoted price. No on-chain trade is executed by Accred on the user's behalf; the market pool is used only as a price cross-check.</p>
+  <ol>
+    <li><strong>Quote.</strong> Accred computes the asset's dollar value from independent sources and applies a haircut. The haircut is 0.5% during market hours and 2% off-hours for stock tokens, covering price movement while a quote is held.</li>
+    <li><strong>Lock.</strong> The resulting credit amount is locked for the quote's validity window.</li>
+    <li><strong>Deposit.</strong> The user sends the exact asset amount.</li>
+    <li><strong>Verify and issue.</strong> Accred verifies the incoming transfer and issues credits at the locked quote.</li>
+    <li><strong>Cashback.</strong> A 10% cashback in USDG is sent to the user's wallet (see <a href="#s8">Section 8</a>).</li>
+  </ol>
+  <h4>Supported assets</h4>
+  <p>Tokenized stocks with a verified live price are supported, together with ETH and a curated list of crypto tokens. $CRED is among the accepted tokens and has its own terms (<a href="#s9">Section 9</a>). Some tokens that are listed for swap-in are not available for redemption.</p>
+  <h3 id="s7-4"><span class="n">7.4</span>Redeeming credits</h3>
+  <p>Redemption returns value in the same asset the user originally swapped in. The user sends credits to Accred, and Accred pays the same token at the live price, as a direct wallet-to-wallet transfer. Redemption depends on Accred holding enough of that asset to pay, so it is subject to availability. When an asset cannot be paid out, the product shows "Low liquidity — swap not available" and offers alternatives. Credits can never be redeemed for $CRED.</p>
+  <div class="warn"><p><strong>Important.</strong> Credits issued for promotions, such as the October 2026 airdrop, are not backed by a deposit. Redemption of credit is limited to the actual reserves Accred holds.</p></div>
+  <h3 id="s7-5"><span class="n">7.5</span>Credits to the vault and back</h3>
+  <p>Credits in a wallet are transferable but cannot be used for model calls until they are <strong>activated</strong>, meaning deposited into the vault. Activation is a signed transaction from the user's wallet. Withdrawal of unreserved vault balance is available at any time.</p>
+</section>
+
+<section id="s8">
+  <h2><span class="n">8</span>Staking and Cashback<a class="anchor" href="#s8">#</a></h2>
+  <h3 id="s8-1"><span class="n">8.1</span>Credit staking</h3>
+  <p>Users who hold credits that they do not intend to spend soon can lock them in the staking contract for a fixed term and earn a USDG yield. The contract holds only the credit principal. Three terms are offered. The rate is the yield for the whole term, not an annualized figure.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Lock term</th><th class="num">USDG yield for the term</th><th class="num">Basis points</th></tr></thead>
+    <tbody>
+      <tr><td>3 days</td><td class="num">3.50%</td><td class="num">350</td></tr>
+      <tr><td>7 days</td><td class="num">5.00%</td><td class="num">500</td></tr>
+      <tr><td>30 days</td><td class="num">9.99%</td><td class="num">999</td></tr>
+    </tbody>
+  </table></div>
+  <p class="cap"><b>Table 2.</b> Staking terms as encoded in the staking contract.</p>
+  <p>The reward amount is fixed at the moment of staking and recorded on-chain with the stake. At the end of the term the user claims the principal from the contract. After the claim, Accred pays the USDG reward from its payout wallet to the user's wallet. The payout is idempotent per stake, so a stake can never be rewarded twice. The principal contract has an owner-only emergency withdrawal, in line with the rule that any contract Accred deploys must be recoverable.</p>
+  <h4>Capacity</h4>
+  <p>Rewards are paid from the payout wallet, so staking capacity is limited by that wallet's USDG balance minus rewards already owed on open or unpaid stakes. Staking is shown as available only while there is enough capacity to honor new stakes.</p>
+  <h3 id="s8-2"><span class="n">8.2</span>Cashback</h3>
+  <p>Every swap earns a flat 10% cashback in USDG, sent directly to the connected wallet from Accred's payout wallet. It applies to swaps, not to direct purchases or redemptions. For swaps paid in $CRED, cashback is measured on the credit value before the bonus. Self-transfers, round trips with the same funds, repeated deposit and withdraw patterns, and duplicate economic actions are excluded. The published limits are 10 USDG per hour and a 60-minute cooldown between cashback payouts.</p>
+  <p>A cashback payout is shown as paid only after its transaction receipt is verified on mainnet.</p>
+  <h3 id="s8-3"><span class="n">8.3</span>Reward status</h3>
+  <p>Cashback, staking and other rewards depend on the payout wallet being funded and on the checks described above. They are described to users only when they are actually available, and illustrative numbers are always captioned as examples.</p>
+</section>
+
+<section id="s9">
+  <h2><span class="n">9</span>$CRED Tokenomics<a class="anchor" href="#s9">#</a></h2>
+  <h3 id="s9-1"><span class="n">9.1</span>Overview</h3>
+  <p>$CRED is the ecosystem token of Accred. It is a standard ERC-20 token on Robinhood Chain. It is separate from the credit token: credits are a consumable unit of AI usage pegged by definition to a dollar price of model cost, while $CRED trades on the open market at a price set by supply and demand.</p>
+  <div class="tbl"><table>
+    <tbody>
+      <tr><td style="width:36%"><strong>Name</strong></td><td>Accred</td></tr>
+      <tr><td><strong>Symbol</strong></td><td>CRED</td></tr>
+      <tr><td><strong>Network</strong></td><td>Robinhood Chain mainnet (chain ID 4663)</td></tr>
+      <tr><td><strong>Contract address</strong></td><td class="addr"><a href="https://robin.etherscan.io/token/0xAAb950F473370aAe2Fe3A469a8099e9bD2f4ef26" target="_blank" rel="noopener">0xAAb950F473370aAe2Fe3A469a8099e9bD2f4ef26</a></td></tr>
+      <tr><td><strong>Decimals</strong></td><td>18</td></tr>
+      <tr><td><strong>Total supply</strong></td><td>1,000,000,000 CRED</td></tr>
+      <tr><td><strong>Burn address</strong></td><td class="addr"><a href="https://robin.etherscan.io/address/0x000000000000000000000000000000000000dEaD" target="_blank" rel="noopener">0x000000000000000000000000000000000000dEaD</a></td></tr>
+      <tr><td><strong>Team allocation</strong></td><td>None</td></tr>
+    </tbody>
+  </table></div>
+  <p class="cap"><b>Table 3.</b> $CRED token facts, read from the chain on 7 October 2026 (block 82,545,944).</p>
+
+  <h3 id="s9-2"><span class="n">9.2</span>Supply and distribution</h3>
+  <p>The total supply of $CRED is 1,000,000,000 tokens. Accred does not allocate any $CRED to a team, founders, advisors or investors, and there is no team vesting schedule because there is no team allocation. Accred currently holds 5,000,000 $CRED in reserve, which is 0.5% of the total supply.</p>
+  <p>If Accred needs $CRED for any future initiative, such as a reward, a campaign or a prize, it buys the tokens on the open market and distributes them. It does not create new supply for this purpose. This means that any distribution by Accred is funded by market purchases and is visible on-chain.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Item</th><th class="num">Amount</th><th class="num">Share of total supply</th></tr></thead>
+    <tbody>
+      <tr><td>Total supply</td><td class="num">1,000,000,000 CRED</td><td class="num">100%</td></tr>
+      <tr><td>Allocated to team, founders or advisors</td><td class="num">0</td><td class="num">0%</td></tr>
+      <tr><td>Held by Accred in reserve</td><td class="num">5,000,000 CRED</td><td class="num">0.5%</td></tr>
+      <tr><td>Burned to the dead address (7 Oct 2026)</td><td class="num">19,928,729.96 CRED</td><td class="num">1.99%</td></tr>
+      <tr><td>Supply net of burned tokens</td><td class="num">980,071,270.04 CRED</td><td class="num">98.01%</td></tr>
+    </tbody>
+  </table></div>
+  <p class="cap"><b>Table 4.</b> Supply facts. The burned amount comes from the dead-address balance on-chain and grows with each burn. The reserve amount is the figure stated by the Accred team.</p>
+  <figure class="fig">
+    <div style="font-size:.875rem;color:var(--muted)">Total supply: 1,000,000,000 CRED</div>
+    <div class="bar" role="img" aria-label="Supply bar: 1.99% burned, 0.5% reserve, 97.51% public and other holders">
+      <i style="width:1.99%;background:var(--fg)"></i>
+      <i style="width:.5%;background:var(--primary)"></i>
+      <i style="width:97.51%;background:var(--raised)"></i>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--fg)"></i>Burned 1.99%</span>
+      <span><i style="background:var(--primary)"></i>Reserve 0.5%</span>
+      <span><i style="background:var(--raised);border:1px solid var(--line-strong)"></i>Remainder is held by the public, pools and other holders</span>
+    </div>
+    <figcaption><b>Figure 3.</b> Share of supply burned and held in reserve (to scale).</figcaption>
+  </figure>
+
+  <h3 id="s9-3"><span class="n">9.3</span>Utility</h3>
+  <h4>9.3.1 Pay for credits and get a bonus</h4>
+  <p>$CRED is an accepted payment token for credits. A user who swaps $CRED into credits receives a <strong>10% credit bonus</strong> on top of the credit amount, in addition to the flat 10% USDG cashback that every swap earns. For $CRED swaps, the cashback is measured on the credit value before the bonus.</p>
+  <h4>9.3.2 Permanent burn</h4>
+  <p>The $CRED paid in a swap is burned. The sequence is: the user sends $CRED to Accred's settlement wallet; Accred verifies the transfer and issues credits; cashback is attempted; and then Accred sends exactly the same amount of $CRED to the dead address. The user receives a link to the burn transaction. Burns are retried in the background until they succeed. The dead address has no known key, so burned tokens cannot be recovered. Because a successful call alone is not proof of destruction, the burn is evidenced by a visible rise in the dead-address balance that matches the amount paid.</p>
+  <p>This design makes every $CRED purchase of credits a permanent reduction in the circulating supply. Credits obtained this way can never be turned back into $CRED: redemption into $CRED is permanently disabled, because Accred does not hold $CRED for payout.</p>
+  <h4>9.3.3 Access to the mobile app</h4>
+  <p>The mobile wallet app is gated by a holder code. A single-use code, valid for seven days, is issued to an owner whose verified wallets together hold at least 100,000 $CRED, checked live on-chain at the moment of the request. The threshold is a hold requirement, not a payment: no $CRED is spent or locked to obtain a code.</p>
+  <h4>9.3.4 Holder rewards</h4>
+  <p>Accred rewards its own community with value from the product rather than with cash spending. Two rewards have been announced.</p>
+  <ul>
+    <li><strong>October 2026 airdrop.</strong> A snapshot of $CRED holders was taken at block 80,097,161 (4 October 2026, 17:01 UTC), with a threshold of 500,000 $CRED. 234 wallets each received 100 credits, sent directly on-chain to their wallets. These credits are not backed by a USDG deposit, so redemption is limited by actual reserves.</li>
+    <li><strong>Accred hackathon.</strong> A 48-hour build, deploy and enroll event with a prize pool of 2,000 USDG and 5,000,000 $CRED.</li>
+  </ul>
+
+  <h3 id="s9-4"><span class="n">9.4</span>What $CRED is not</h3>
+  <ul>
+    <li>It is not redeemable for credits, for USDG or for any fixed amount of any asset.</li>
+    <li>It carries no governance rights, no claim on revenue and no dividend.</li>
+    <li>It is not staked in the Accred staking contract; staking applies to credits.</li>
+    <li>It is not a stable-value token. Its market price can move sharply and may fall to zero.</li>
+  </ul>
+  <p>Future utilities, if any, will be announced separately and will not change the facts above retroactively.</p>
+
+  <h3 id="s9-5"><span class="n">9.5</span>Burn mechanics and supply simulation</h3>
+  <p>Two supply measures are used. <strong>Burned</strong> is the $CRED balance of the dead address. <strong>Supply net of burned tokens</strong> is the total supply minus that balance. Let S = 1,000,000,000 and B be the burned amount. Then:</p>
+  <div class="math">burned share = B / S      net supply = S − B</div>
+  <p>The balance of the dead address includes burns from any source. Burns made through Accred swaps are a subset and are recorded separately in Accred's ledger with their transaction hashes. The table below illustrates how further burns would change the measures, starting from the 7 October 2026 value of B = 19,928,729.96. It is an arithmetic example, not a forecast, and it makes no claim about how many tokens will be burned.</p>
+  <div class="tbl"><table>
+    <thead><tr><th class="num">Additional burn</th><th class="num">Total burned</th><th class="num">Burned share</th><th class="num">Net supply</th></tr></thead>
+    <tbody>
+      <tr><td class="num">0 (today)</td><td class="num">19,928,730</td><td class="num">1.99%</td><td class="num">980,071,270</td></tr>
+      <tr><td class="num">1,000,000</td><td class="num">20,928,730</td><td class="num">2.09%</td><td class="num">979,071,270</td></tr>
+      <tr><td class="num">10,000,000</td><td class="num">29,928,730</td><td class="num">2.99%</td><td class="num">970,071,270</td></tr>
+      <tr><td class="num">50,000,000</td><td class="num">69,928,730</td><td class="num">6.99%</td><td class="num">930,071,270</td></tr>
+      <tr><td class="num">100,000,000</td><td class="num">119,928,730</td><td class="num">11.99%</td><td class="num">880,071,270</td></tr>
+      <tr><td class="num">250,000,000</td><td class="num">269,928,730</td><td class="num">26.99%</td><td class="num">730,071,270</td></tr>
+    </tbody>
+  </table></div>
+  <p class="cap"><b>Table 5.</b> Illustrative supply simulation. Not a prediction.</p>
+
+  <h3 id="s9-6"><span class="n">9.6</span>Transparency</h3>
+  <p>All $CRED facts in this document can be verified without trusting Accred: total supply and balances from the token contract, burned supply from the dead-address balance, and every Accred-driven burn from its transaction hash. The Accred site reads live supply, burned amount and market data directly from the chain and from public market data sources.</p>
+</section>
+
+<section id="s10">
+  <h2><span class="n">10</span>Security<a class="anchor" href="#s10">#</a></h2>
+  <h3 id="s10-1"><span class="n">10.1</span>Security objectives</h3>
+  <ul>
+    <li>No model call is made without a confirmed on-chain reservation.</li>
+    <li>No credit is issued without an exactly matching, verified payment.</li>
+    <li>No payment, payout or burn is executed twice.</li>
+    <li>A compromise of one component does not expose all funds.</li>
+    <li>A user's wallet keys are never held by Accred.</li>
+  </ul>
+  <h3 id="s10-2"><span class="n">10.2</span>Smart contract design</h3>
+  <h4>Signed quotes</h4>
+  <p>The credit purchase contract accepts a quote only if the quote is signed by the authorized signer, has not expired, was issued for this chain and this credit token, names the caller as the user, uses an input token on the allowed list, and carries a nonce that has not been used. After the transfer, the contract checks that the receiving wallet's balance rose by exactly the input amount, which defeats tokens that charge fees on transfer or fail silently.</p>
+  <h4>Vault accounting</h4>
+  <p>Reservations are keyed by request ID, so settlement and release always refer to a single hold. Unreserved deposits are always withdrawable. Settlement requires the credit burn to occur in the same operation, and the gateway verifies the burn event before it treats a request as settled.</p>
+  <h4>Recoverability</h4>
+  <p>Any contract that Accred deploys and that holds user principal has an owner-only emergency withdrawal. The staking contract holds only credit principal and has one.</p>
+  <h4>Testing</h4>
+  <p>Contracts are covered by local test suites that include adversarial tokens: a token whose burn returns success without burning, one whose burn returns false, one that ignores transfers, and tokens with callbacks. These were written specifically because a successful burn call is not proof of destruction. Accred has not published a third-party audit report as of the date of this document, and users should consider the risks described in <a href="#s12">Section 12</a>.</p>
+  <h3 id="s10-3"><span class="n">10.3</span>Payment verification</h3>
+  <p>Incoming payments are verified from chain evidence, not from user-submitted claims. For each payment, Accred checks the sender, token, amount and recipient, and the number of confirmations. Swap verification treats the delivered amount as a minimum, not an exact figure, where the quote allows surplus. For Solana, the payment must match a unique open session by exact amount and must be finalized.</p>
+  <h3 id="s10-4"><span class="n">10.4</span>Idempotency and concurrency</h3>
+  <ul>
+    <li>Inference requests are idempotent per owner and request fingerprint.</li>
+    <li>Each payout and each burn has a unique operation key. A repeated attempt returns the first result.</li>
+    <li>Staking rewards are paid once per stake ID.</li>
+    <li>Signer transactions are serialized by a database advisory lock and a nonce manager.</li>
+    <li>x402 payers have an in-flight lock so one signed payment cannot authorize two calls.</li>
+  </ul>
+  <h3 id="s10-5"><span class="n">10.5</span>Key management</h3>
+  <p>Keys are separated by role: settlement, payouts and cashback, and quote signing. They are stored as managed secrets, never written to responses or logs. A payout wallet's exposure is limited by the cashback hourly cap and by the fact that it holds only what is needed for rewards. Redemptions and payouts are wallet-to-wallet transfers rather than contract calls, so Accred does not need to hold user funds inside contracts.</p>
+  <h3 id="s10-6"><span class="n">10.6</span>Application security</h3>
+  <ul>
+    <li><strong>Authentication.</strong> Verified login for the web, wallet signatures for the mobile app, and OAuth with PKCE for MCP. Wallet login alone never authorizes a fund movement.</li>
+    <li><strong>API keys.</strong> Stored as SHA-256 hashes. Each key is bound to a wallet snapshot.</li>
+    <li><strong>Request forgery.</strong> Callers cannot supply URLs or endpoints. Model identifiers are resolved from internal lists.</li>
+    <li><strong>Limits.</strong> Rate limits per owner and per key, a daily budget and size bounds apply before any reservation.</li>
+    <li><strong>Scoped connectors.</strong> MCP tokens can reach only MCP routes. Mobile app tokens are limited to an allowlist of routes.</li>
+    <li><strong>Privacy on X.</strong> The bot does not reveal private wallet usage in public replies, and it cannot start a financial action other than an explicit send command that the sender has pre-authorized with an allowance.</li>
+  </ul>
+  <h3 id="s10-7"><span class="n">10.7</span>Operational risks and mitigations</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Risk</th><th>Mitigation</th></tr></thead>
+    <tbody>
+      <tr><td>Price source error</td><td>Multiple independent sources, maximum permitted gap, lower value used, quote refused if sources disagree</td></tr>
+      <tr><td>Price movement during a quote</td><td>Short quote window and a haircut of 0.5% (2% off-hours)</td></tr>
+      <tr><td>Provider outage or unknown outcome</td><td>Single dispatch, hold released only after proof, uncertain cost absorbed by the platform</td></tr>
+      <tr><td>Chain reorganization</td><td>Confirmation depth for Robinhood payments, finalized commitment for Solana, field-by-field verification</td></tr>
+      <tr><td>RPC pruning</td><td>Reads from a fixed confirmation-depth block when finalized state is unavailable</td></tr>
+      <tr><td>Payout wallet underfunded</td><td>Staking capacity check, payouts shown as pending until sent</td></tr>
+      <tr><td>Abuse of cashback</td><td>Exclusion patterns, hourly cap, cooldown</td></tr>
+      <tr><td>Lost wallet key</td><td>Non-custodial design: Accred cannot recover a user's key, and tells users so</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="s11">
+  <h2><span class="n">11</span>Math Models<a class="anchor" href="#s11">#</a></h2>
+  <p class="lead">All figures marked as examples are illustrations only. They do not describe a real transaction.</p>
+  <h3 id="s11-1"><span class="n">11.1</span>Credit unit</h3>
+  <p>Let U be an amount in US dollars and C the equivalent in credits.</p>
+  <div class="math">C = 100 × U      1 credit = 10^18 base units      1 microcredit = 10^12 base units</div>
+  <p>So US$1 equals 100 credits, which equals 100 × 10<sup>18</sup> base units or 100,000,000 microcredits.</p>
+  <h3 id="s11-2"><span class="n">11.2</span>Cost of a request</h3>
+  <p>For a model with input price p<sub>in</sub> and output price p<sub>out</sub> in dollars per million tokens, a request that uses t<sub>in</sub> input tokens and t<sub>out</sub> output tokens costs:</p>
+  <div class="math">costUSD       = ( t_in × p_in + t_out × p_out ) / 1,000,000
+charge_µcredits = ceil( 100 × costUSD × 1,000,000 )</div>
+  <p>The charge is rounded up to the next microcredit, so a real cost never rounds to zero.</p>
+  <h4>Example (illustrative prices)</h4>
+  <dl class="kv">
+    <dt>Model price</dt><dd>US$3 per million input tokens, US$15 per million output tokens</dd>
+    <dt>Usage</dt><dd>1,200 input tokens, 400 output tokens</dd>
+    <dt>Cost in USD</dt><dd>(1,200 × 3 + 400 × 15) / 1,000,000 = 0.0036 + 0.0060 = US$0.0096</dd>
+    <dt>Charge</dt><dd>100 × 0.0096 = 0.96 credits = 960,000 microcredits</dd>
+  </dl>
+  <h3 id="s11-3"><span class="n">11.3</span>Reservation</h3>
+  <p>Before a call, the gateway reserves the worst case. The input size is bounded by the byte length of the serialized messages, since a token never takes less than one byte of input, and output is bounded by the requested maximum.</p>
+  <div class="math">reserve = ceil( 100 × ( bytes_in × p_in + max_tokens × p_out ) / 1,000,000 × 1,000,000 )</div>
+  <p>The settled charge is never larger than the reservation, and the difference, reserve − charge, is released.</p>
+  <h3 id="s11-4"><span class="n">11.4</span>Swap quote</h3>
+  <p>For an asset with verified dollar value V and a haircut h (0.005 in market hours, 0.02 off-hours for stock tokens), the credits issued are:</p>
+  <div class="math">credits = floor( 100 × V × (1 − h) )</div>
+  <h4>Example (illustrative)</h4>
+  <dl class="kv">
+    <dt>Asset value</dt><dd>US$200.00 in market hours</dd>
+    <dt>Credits</dt><dd>100 × 200 × 0.995 = 19,900 credits</dd>
+    <dt>Same swap off-hours (h = 0.02)</dt><dd>100 × 200 × 0.98 = 19,600 credits</dd>
+  </dl>
+  <h3 id="s11-5"><span class="n">11.5</span>Cashback</h3>
+  <p>Cashback in USDG is a flat share of the swap value, subject to the published limits:</p>
+  <div class="math">cashback = 0.10 × V    (limit: 10 USDG per hour, 60-minute cooldown)</div>
+  <p>For an asset worth US$50, the cashback is US$5, within the limit. For an asset worth US$300, the computed cashback is US$30, but the hourly limit means the payout is limited to US$10 in that hour.</p>
+  <h3 id="s11-6"><span class="n">11.6</span>Paying with $CRED</h3>
+  <p>If the credit amount before the bonus is C<sub>0</sub>, the user receives:</p>
+  <div class="math">C = C_0 × 1.10      cashback = 0.10 × C_0 / 100 USDG</div>
+  <h4>Example (illustrative)</h4>
+  <dl class="kv">
+    <dt>Credit value before bonus</dt><dd>2,000 credits (US$20)</dd>
+    <dt>Credits received</dt><dd>2,000 × 1.10 = 2,200 credits</dd>
+    <dt>Cashback</dt><dd>0.10 × 20 = US$2.00 in USDG</dd>
+    <dt>$CRED burned</dt><dd>Exactly the amount of $CRED paid</dd>
+  </dl>
+  <h3 id="s11-7"><span class="n">11.7</span>Staking payout</h3>
+  <p>For K credits staked at a term rate of b basis points, the USDG reward is fixed at stake time:</p>
+  <div class="math">reward_USDG = ( K / 100 ) × ( b / 10,000 )</div>
+  <div class="tbl"><table>
+    <thead><tr><th class="num">Credits staked</th><th class="num">Value</th><th class="num">3 days (350 bps)</th><th class="num">7 days (500 bps)</th><th class="num">30 days (999 bps)</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1,000</td><td class="num">US$10</td><td class="num">US$0.35</td><td class="num">US$0.50</td><td class="num">US$0.999</td></tr>
+      <tr><td class="num">10,000</td><td class="num">US$100</td><td class="num">US$3.50</td><td class="num">US$5.00</td><td class="num">US$9.99</td></tr>
+      <tr><td class="num">100,000</td><td class="num">US$1,000</td><td class="num">US$35.00</td><td class="num">US$50.00</td><td class="num">US$99.90</td></tr>
+    </tbody>
+  </table></div>
+  <p class="cap"><b>Table 6.</b> Staking reward per term. The yield is for the term, not annualized, and the principal is returned in credits.</p>
+  <h3 id="s11-8"><span class="n">11.8</span>Supply identities</h3>
+  <p>Credits are burned when consumed, so credit supply moves with issuance and consumption. For any time t:</p>
+  <div class="math">Supply_credit(t) = Issued(t) − Burned(t)</div>
+  <p>Each settlement burns exactly the settled amount. This identity can be checked from the token's total supply and the vault's burn events. For $CRED, net supply = S − B as in <a href="#s9-5">Section 9.5</a>.</p>
+</section>
+
+<section id="s12">
+  <h2><span class="n">12</span>Legal<a class="anchor" href="#s12">#</a></h2>
+  <div class="note"><p><strong>Please read carefully.</strong> This section is a general statement of the legal nature and risks of Accred and $CRED. It is not legal advice. Laws differ by country and change over time, and each reader is responsible for understanding the rules that apply to them.</p></div>
+  <h3 id="s12-1"><span class="n">12.1</span>Nature of this document</h3>
+  <p>This whitepaper is provided for information only. It is not a prospectus, an offer to sell, a solicitation to buy, or a recommendation about any security, token, financial instrument or investment. Nothing in it creates a binding obligation on Accred to deliver any feature, price, reward or outcome. Descriptions of products reflect the system at the date of this document and may change.</p>
+  <h3 id="s12-2"><span class="n">12.2</span>Credits are service credits</h3>
+  <p>An LLM credit is a unit of prepaid access to AI model usage. It is not a bank deposit, not electronic money, not a share, a bond or a claim on Accred's profits, and it does not earn interest by itself. Its fixed relationship of 100 credits to one US dollar defines how much model usage it can pay for. It does not promise that credits can be exchanged for dollars. Where credit can be redeemed into an asset, redemption is limited to the reserves Accred actually holds and to prices at the time of redemption. Credits issued free of charge, for example in airdrops, are not backed by a deposit.</p>
+  <h3 id="s12-3"><span class="n">12.3</span>$CRED</h3>
+  <p>$CRED is a utility and community token. It carries no governance rights, no right to revenue or dividends, no redemption right and no promise of price appreciation. The market price of $CRED is set by third parties trading on open markets and can fall to zero. Holding $CRED, paying with it, or receiving it as a reward is done at the holder's own risk. Rewards denominated in $CRED are funded by Accred buying tokens in the market, and their value at the time of receipt may differ from their value later.</p>
+  <p>Accred does not allocate $CRED to a team, and nothing in this document is a statement that holders will profit from the work of others. Accred makes no representation about the classification of $CRED under the law of any jurisdiction.</p>
+  <h3 id="s12-4"><span class="n">12.4</span>Regulatory considerations</h3>
+  <p>Crypto assets, stablecoins, tokenized securities and payment services are regulated in many countries, and the rules are changing. Tokenized stock products offered on third-party platforms may have their own eligibility and legal conditions. Accred does not make any assertion about whether a given user may lawfully hold, swap or redeem a particular asset in their location. Accred may restrict or suspend features, regions or assets where required, or where it considers it prudent.</p>
+  <h3 id="s12-5"><span class="n">12.5</span>Third-party services</h3>
+  <p>Accred depends on third parties: the Robinhood Chain network and its explorers, Solana, price data providers, model providers, wallet software and application stores. Their availability, terms and prices are outside Accred's control. Accred does not claim enterprise agreements or discounted provider rates. Model usage is subject to each provider's acceptable-use policies, and requests that violate them may be refused.</p>
+  <h3 id="s12-6"><span class="n">12.6</span>Risks</h3>
+  <ul>
+    <li><strong>Smart contract risk.</strong> Code can contain errors. Tests and reviews reduce but do not remove this risk.</li>
+    <li><strong>Market risk.</strong> Asset prices move. Quotes are valid for a short period only, and haircuts apply.</li>
+    <li><strong>Liquidity risk.</strong> Redemption depends on reserves. Some assets are unavailable for redemption at times.</li>
+    <li><strong>Key loss.</strong> Accred is non-custodial for user wallets. A lost key cannot be recovered by Accred.</li>
+    <li><strong>Chain risk.</strong> Network congestion, outages, re-orgs and sequencer behavior can delay or reorder transactions.</li>
+    <li><strong>Provider risk.</strong> A provider can change prices, withdraw a model or have an outage.</li>
+    <li><strong>Reward risk.</strong> Cashback and staking rewards depend on the payout wallet being funded and on eligibility rules. They can be paused.</li>
+    <li><strong>Phishing and impersonation.</strong> Only use the official links in <a href="#s17">Section 17</a>. Accred will never ask for a private key or seed phrase.</li>
+  </ul>
+  <h3 id="s12-7"><span class="n">12.7</span>Taxes</h3>
+  <p>Buying, swapping, redeeming, staking, receiving rewards or airdrops, and spending credits may have tax consequences in the user's jurisdiction. Users are responsible for determining and paying any taxes. Accred provides transaction links and usage records that can help with record keeping.</p>
+  <h3 id="s12-8"><span class="n">12.8</span>Privacy and data</h3>
+  <p>Accred processes the data needed to run the service: wallet addresses, API key metadata, request ledgers and usage records. Wallet addresses and transactions are public on a blockchain and cannot be deleted. Accred does not post private wallet usage publicly. See the privacy page on accred.sh for details.</p>
+  <h3 id="s12-9"><span class="n">12.9</span>Forward-looking statements</h3>
+  <p>Statements about features that are pending, such as store listings for the mobile app, or about possible future utility of $CRED, are intentions and not guarantees. They depend on approvals, technical work and market conditions.</p>
+</section>
+
+<section id="s13">
+  <h2><span class="n">13</span>Use Cases<a class="anchor" href="#s13">#</a></h2>
+  <h3 id="s13-1"><span class="n">13.1</span>Individuals: one balance for every model</h3>
+  <p>A developer or writer holds credits in a wallet and uses any available model from the web app, the Playground, a browser extension or an editor, without managing a subscription for each provider. Credits that are not used remain in the wallet. They are not lost at the end of a billing month.</p>
+  <h3 id="s13-2"><span class="n">13.2</span>Crypto holders: spend assets as they are</h3>
+  <p>A holder with tokenized stocks, ETH, Solana assets or a supported token can turn a part of the position into AI usage with a locked quote and a 10% cashback in USDG, without leaving the chain or using a card.</p>
+  <h3 id="s13-3"><span class="n">13.3</span>Developers: a standard API with on-chain proof</h3>
+  <p>A team points an OpenAI-compatible or Anthropic-compatible client at Accred and pays from a balance they control. Each response contains an exact receipt, and each settlement has a public burn event that can be matched to the request.</p>
+  <h3 id="s13-4"><span class="n">13.4</span>Teams: shared pools</h3>
+  <p>A group funds a pool, approves members, and issues keys that draw from the pool. This replaces seat-based plans with a shared balance and gives the owner a single place to see consumption. The sponsorship of 1,000 credits helps new teams get started.</p>
+  <h3 id="s13-5"><span class="n">13.5</span>AI agents: pay per call with x402</h3>
+  <p>An autonomous agent that holds USDG can call models without an account. It receives a price, signs a payment, and gets a response. If the call fails, nothing is charged. This makes machine-to-machine commerce for AI usage possible without custom billing.</p>
+  <h3 id="s13-6"><span class="n">13.6</span>Assistants: MCP connectors</h3>
+  <p>A user connects Accred to an AI assistant through MCP and lets it query a model, check the balance or list models, with the cost deducted from the user's credits. Wallet actions remain in the app, signed by the user.</p>
+  <h3 id="s13-7"><span class="n">13.7</span>Communities: gifting and rewards</h3>
+  <p>Credits are transferable, so they can be gifted, used as prizes, or sent from a post on X using the send command. Communities can reward members with something that is useful immediately, rather than with a token whose only use is trading. The hackathon and the holder airdrop are examples.</p>
+  <h3 id="s13-8"><span class="n">13.8</span>Automation: scheduled and triggered jobs</h3>
+  <p>With Accred Agent, a user describes a job, connects the apps it needs, sets a budget, and runs it on a schedule, a webhook or a button. Every run is paid from credits, and the budget limits spending.</p>
+  <h3 id="s13-9"><span class="n">13.9</span>Mobile: a wallet in the pocket</h3>
+  <p>The mobile app lets a holder manage credits, swap with a quote validated on the device, and sign from their own key, without relying on browser extensions.</p>
+</section>
+
+<section id="s14">
+  <h2><span class="n">14</span>Competitive Analysis<a class="anchor" href="#s14">#</a></h2>
+  <p>Accred is compared below with the common categories of ways to buy AI usage. The comparison describes typical properties of each category and is not a statement about any named company. Individual offers differ.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Property</th><th>Chat subscriptions</th><th>Provider prepaid API balance</th><th>Aggregator gateways</th><th>Accred</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Unit of value</strong></td><td>Seat or plan</td><td>Dollar balance in an account</td><td>Dollar balance in an account</td><td>ERC-20 credit token in a wallet</td></tr>
+      <tr><td><strong>Transferable</strong></td><td>No</td><td>No</td><td>No</td><td>Yes</td></tr>
+      <tr><td><strong>Models covered</strong></td><td>One vendor</td><td>One vendor</td><td>Many vendors</td><td>Many vendors, one balance</td></tr>
+      <tr><td><strong>Markup on model price</strong></td><td>Bundled in plan</td><td>None, at provider list price</td><td>Often a fee or margin</td><td>None added by Accred</td></tr>
+      <tr><td><strong>Pay with crypto or tokenized assets</strong></td><td>Rarely</td><td>Rarely</td><td>Sometimes</td><td>Yes: USDG, SOL, USDC, USDT, stocks, tokens, $CRED</td></tr>
+      <tr><td><strong>Pay per call for agents (x402)</strong></td><td>No</td><td>No</td><td>Rarely</td><td>Yes, on Robinhood Chain</td></tr>
+      <tr><td><strong>Public proof of metering</strong></td><td>No</td><td>No</td><td>No</td><td>Reserve and burn events on-chain</td></tr>
+      <tr><td><strong>Unused balance</strong></td><td>Lost at renewal</td><td>May expire</td><td>May expire</td><td>Stays in wallet, can be sent, redeemed or staked</td></tr>
+      <tr><td><strong>Rewards on spending</strong></td><td>Rarely</td><td>Rarely</td><td>Sometimes</td><td>10% USDG cashback on every swap</td></tr>
+      <tr><td><strong>Custody</strong></td><td>Vendor account</td><td>Vendor account</td><td>Vendor account</td><td>Wallet held by the user</td></tr>
+    </tbody>
+  </table></div>
+  <p class="cap"><b>Table 7.</b> Typical properties by category.</p>
+  <h3 id="s14-1"><span class="n">14.1</span>Where Accred is strong</h3>
+  <ul>
+    <li><strong>Ownership.</strong> Credits are tokens that can be moved, gifted and verified.</li>
+    <li><strong>Price clarity.</strong> A fixed 100-credit dollar and list-price models make cost predictable.</li>
+    <li><strong>Native crypto payment.</strong> Several payment paths, including stocks and tokens, with cashback.</li>
+    <li><strong>Agent-native rails.</strong> x402, an MCP server and compatible APIs let software pay on its own.</li>
+    <li><strong>Verifiable metering.</strong> Reserve, settle and burn events are public.</li>
+  </ul>
+  <h3 id="s14-2"><span class="n">14.2</span>Where Accred is limited</h3>
+  <ul>
+    <li><strong>Text only on compatible routes.</strong> Tool use and images are not accepted on the OpenAI-compatible and Anthropic-compatible routes.</li>
+    <li><strong>Catalogue.</strong> Only models with a verified price are enabled, so the catalogue can be smaller than a provider's full list.</li>
+    <li><strong>Chain dependence.</strong> Using credits requires a wallet on Robinhood Chain.</li>
+    <li><strong>Redemption depends on reserves.</strong> Not every asset can be redeemed at every time.</li>
+    <li><strong>Younger ecosystem.</strong> Accred is new and has less operating history than long-established vendors.</li>
+  </ul>
+</section>
+
+<section id="s15">
+  <h2><span class="n">15</span>Status and Limitations<a class="anchor" href="#s15">#</a></h2>
+  <p>This section records, in one place, what is available at the date of this document and what is not. It is meant to prevent any misunderstanding.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Area</th><th>Status</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td>Credit token, vault, purchase and staking contracts</td><td>Deployed</td><td>Robinhood Chain mainnet, addresses in <a href="#s4-2">Section 4.2</a></td></tr>
+      <tr><td>Buy credits with USDG</td><td>Available</td><td>Direct transfer, verified field by field</td></tr>
+      <tr><td>Buy credits with SOL, USDC, USDT</td><td>Available</td><td>Unique exact-amount sessions on Solana</td></tr>
+      <tr><td>Swap stocks and tokens into credits</td><td>Available when a verified price exists</td><td>Otherwise: Low liquidity — swap not available</td></tr>
+      <tr><td>Redeem credits</td><td>Subject to reserves</td><td>Same asset only. Never into $CRED</td></tr>
+      <tr><td>Staking</td><td>Subject to payout capacity</td><td>3, 7 and 30-day terms</td></tr>
+      <tr><td>10% USDG cashback</td><td>Per policy</td><td>Hourly cap and cooldown apply</td></tr>
+      <tr><td>OpenAI and Anthropic compatible routes</td><td>Available</td><td>Text only, no tools or images</td></tr>
+      <tr><td>x402</td><td>Live</td><td>USDG via Permit2 on chain 4663</td></tr>
+      <tr><td>MCP server</td><td>Available</td><td>OAuth with PKCE, four tools</td></tr>
+      <tr><td>Chrome extension</td><td>Live</td><td>Chrome Web Store</td></tr>
+      <tr><td>Android package</td><td>Available</td><td>Direct download</td></tr>
+      <tr><td>Google Play and Apple App Store</td><td>Pending</td><td>Awaiting store approval</td></tr>
+      <tr><td>Image and audio generation</td><td>Not available</td><td>Until metered handlers and exact prices exist</td></tr>
+    </tbody>
+  </table></div>
+  <h3 id="s15-1"><span class="n">15.1</span>Known limits</h3>
+  <ul>
+    <li>A request is limited to 400,000 bytes of messages and 8,192 output tokens.</li>
+    <li>Team pool deposits are one-way and not redeemable.</li>
+    <li>The mobile app supports one wallet and requires a holder code at first sign-in.</li>
+    <li>X bot send claims not collected within 30 days are refunded to the sender.</li>
+    <li>The confirmation policy for Robinhood Chain uses a small block depth rather than waiting for finality on the settlement layer.</li>
+  </ul>
+</section>
+
+<section id="s16">
+  <h2><span class="n">16</span>Conclusion<a class="anchor" href="#s16">#</a></h2>
+  <p>Accred starts from a simple observation: the money people spend on AI should not disappear into an account they cannot control. By turning AI usage into a token with a fixed relationship to the dollar, Accred gives users a balance they own, can move, and can verify. A reserve, settle and burn protocol makes each charge visible on a public chain. Zero markup on model prices and a single balance across providers make the cost of using many models easy to understand.</p>
+  <p>Around that core, Accred offers the paths a real user needs: buying with the assets they already hold, swapping stocks and tokens at a locked quote, earning cashback, staking idle credit, and spending from the web, an API, an editor, an assistant, a browser, a phone, a social post, or an autonomous agent that pays per call.</p>
+  <p>$CRED gives the community a shared token with clear and limited roles: a bonus and a permanent burn when used to buy credits, a holding threshold for the mobile app, and rewards that Accred funds by buying tokens in the market. There is no team allocation. This document sets out those facts and their limits without projecting outcomes.</p>
+  <p>The work is ongoing. As new channels, models and assets are added, this whitepaper will be updated with a new version number and date.</p>
+</section>
+
+<section id="s17">
+  <h2><span class="n">17</span>Official Links<a class="anchor" href="#s17">#</a></h2>
+  <div class="tbl"><table>
+    <tbody>
+      <tr><td style="width:36%"><strong>Website and app</strong></td><td><a href="https://accred.sh" target="_blank" rel="noopener">https://accred.sh</a></td></tr>
+      <tr><td><strong>X (Twitter)</strong></td><td><a href="https://x.com/useaccred" target="_blank" rel="noopener">https://x.com/useaccred</a></td></tr>
+      <tr><td><strong>Agent</strong></td><td><a href="https://agent.accred.sh" target="_blank" rel="noopener">https://agent.accred.sh</a></td></tr>
+      <tr><td><strong>Builder</strong></td><td><a href="https://build.accred.sh" target="_blank" rel="noopener">https://build.accred.sh</a></td></tr>
+      <tr><td><strong>Block explorer</strong></td><td><a href="https://robin.etherscan.io" target="_blank" rel="noopener">https://robin.etherscan.io</a></td></tr>
+      <tr><td><strong>$CRED contract</strong></td><td class="addr"><a href="https://robin.etherscan.io/token/0xAAb950F473370aAe2Fe3A469a8099e9bD2f4ef26" target="_blank" rel="noopener">0xAAb950F473370aAe2Fe3A469a8099e9bD2f4ef26</a></td></tr>
+      <tr><td><strong>Credit token contract</strong></td><td class="addr"><a href="https://robin.etherscan.io/token/0x854Af176109Cf2b377E2f90C25e57F4A67f10cf4" target="_blank" rel="noopener">0x854Af176109Cf2b377E2f90C25e57F4A67f10cf4</a></td></tr>
+      <tr><td><strong>Credit vault contract</strong></td><td class="addr"><a href="https://robin.etherscan.io/address/0xE030BABE6CFD26042C71515C153C4b35bbA4e56A" target="_blank" rel="noopener">0xE030BABE6CFD26042C71515C153C4b35bbA4e56A</a></td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn"><p>Always check that a link or contract address matches this list. Accred will never ask for your private key or seed phrase, and no one from Accred will message you first asking for funds.</p></div>
+</section>
+
+<section id="appA">
+  <h2><span class="n">A</span>Verifying Claims On-Chain<a class="anchor" href="#appA">#</a></h2>
+  <p>Everything important in this document can be checked by the reader.</p>
+  <ol>
+    <li><strong>$CRED total supply.</strong> Open the <a href="https://robin.etherscan.io/token/0xAAb950F473370aAe2Fe3A469a8099e9bD2f4ef26" target="_blank" rel="noopener">$CRED contract</a> on the explorer and read <code>totalSupply</code>. The value should be 1,000,000,000 × 10<sup>18</sup> base units.</li>
+    <li><strong>$CRED burned.</strong> Read <code>balanceOf</code> for <code>0x000000000000000000000000000000000000dEaD</code>.</li>
+    <li><strong>A specific burn.</strong> Open the burn transaction link received after a $CRED swap and confirm the transfer to the dead address and the amount.</li>
+    <li><strong>Credit supply.</strong> Read <code>totalSupply</code> on the <a href="https://robin.etherscan.io/token/0x854Af176109Cf2b377E2f90C25e57F4A67f10cf4" target="_blank" rel="noopener">credit token</a>. Compare with issuance and with the vault's burn events.</li>
+    <li><strong>A request's settlement.</strong> Find the vault's request-indexed events for the request ID in the receipt: the reservation, the settlement and the burn.</li>
+    <li><strong>Staking.</strong> Read <code>stakes(id)</code> on the staking contract for principal, reward amount, unlock time and claimed state.</li>
+    <li><strong>Cashback and payouts.</strong> Open the transaction link of the USDG transfer from the payout wallet.</li>
+  </ol>
+</section>
+
+<section id="appB">
+  <h2><span class="n">B</span>API Quick Reference<a class="anchor" href="#appB">#</a></h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Endpoint</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">POST /api/customer/v1/chat/completions</td><td>Native chat completion (platform key and idempotency key)</td></tr>
+      <tr><td class="mono">POST /api/openai/v1/chat/completions</td><td>OpenAI-compatible completion, streaming supported</td></tr>
+      <tr><td class="mono">GET /api/openai/v1/models</td><td>OpenAI-style list of available text models</td></tr>
+      <tr><td class="mono">POST /api/customer/v1/messages</td><td>Anthropic-compatible messages, streaming supported</td></tr>
+      <tr><td class="mono">POST /api/customer/v1/messages/count_tokens</td><td>Input token estimate</td></tr>
+      <tr><td class="mono">GET /api/customer/models</td><td>Public model catalogue with prices</td></tr>
+      <tr><td class="mono">GET /api/customer/usage</td><td>Owner-scoped usage records</td></tr>
+      <tr><td class="mono">GET /api/customer/accounting</td><td>Owner-scoped accounting records</td></tr>
+      <tr><td class="mono">POST /api/customer/reconcile</td><td>Recheck a ledger entry against chain evidence</td></tr>
+      <tr><td class="mono">/api/mcp</td><td>MCP server over streamable HTTP, OAuth</td></tr>
+      <tr><td class="mono">/api/x402/...</td><td>x402 pay-per-call endpoints</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Example: OpenAI-compatible client</h3>
+<pre><code>base URL : https://accred.sh/api/openai/v1
+api key  : your Accred platform key
+model    : any id returned by GET /api/openai/v1/models</code></pre>
+</section>
+
+<section id="appC">
+  <h2><span class="n">C</span>Glossary<a class="anchor" href="#appC">#</a></h2>
+  <dl class="defs">
+    <dt>Credit</dt><dd>The ERC-20 unit of AI usage. 100 credits = US$1 of model usage.</dd>
+    <dt>Microcredit</dt><dd>One millionth of a credit, the internal accounting unit.</dd>
+    <dt>Activate</dt><dd>Deposit credits from a wallet into the vault so they can be spent.</dd>
+    <dt>Reserve</dt><dd>Hold the worst-case cost of a request in the vault before the model is called.</dd>
+    <dt>Settle</dt><dd>Charge the exact cost after the response and burn the settled credits.</dd>
+    <dt>Release</dt><dd>Return an unused reservation to the available balance.</dd>
+    <dt>Haircut</dt><dd>A deduction applied to an asset's value in a quote to cover price movement.</dd>
+    <dt>USDG</dt><dd>The dollar stablecoin used on Robinhood Chain for payouts and x402.</dd>
+    <dt>x402</dt><dd>A scheme for paying for HTTP requests with a signed payment after an HTTP 402 response.</dd>
+    <dt>Permit2</dt><dd>A token approval contract that lets a signed message authorize a transfer.</dd>
+    <dt>MCP</dt><dd>Model Context Protocol, a standard for connecting AI assistants to tools.</dd>
+    <dt>Idempotency key</dt><dd>A client-chosen value that makes a repeated request safe.</dd>
+    <dt>Dead address</dt><dd>An address with no known key, used to destroy tokens permanently.</dd>
+  </dl>
+</section>
+
+<section id="appD">
+  <h2><span class="n">D</span>Frequently Asked Questions<a class="anchor" href="#appD">#</a></h2>
+  <dl class="faq">
+    <dt>Is a credit the same as $CRED?</dt>
+    <dd>No. A credit is a unit of AI usage fixed at 100 per dollar. $CRED is a separate market-priced token.</dd>
+    <dt>Does Accred add a markup to model prices?</dt>
+    <dd>No. Credits are priced at each model's listed cost, with no markup added by Accred.</dd>
+    <dt>What happens if a model call fails?</dt>
+    <dd>The reservation is released. If a provider's outcome is uncertain, any uncertain cost is absorbed by the platform and is not charged to the customer. On x402, nothing is charged for a failed call.</dd>
+    <dt>Can I get my money back out?</dt>
+    <dd>Unreserved vault balance can be withdrawn to the wallet at any time. Redeeming credits into an asset depends on reserves, and credits can never be redeemed into $CRED.</dd>
+    <dt>What happens to the $CRED I pay with?</dt>
+    <dd>It is burned to the dead address after the credits are issued, and the user receives the transaction link.</dd>
+    <dt>Does the team hold $CRED?</dt>
+    <dd>The team has no allocation. Accred holds 5,000,000 $CRED in reserve, and any further $CRED needed for rewards is bought in the market.</dd>
+    <dt>Does Accred hold my keys?</dt>
+    <dd>No. Wallets are non-custodial. The mobile app and the Chrome extension keep keys on the device or in the browser, and Accred cannot restore them.</dd>
+    <dt>How do I avoid fake links?</dt>
+    <dd>Use only the links in <a href="#s17">Section 17</a>.</dd>
+  </dl>
+</section>
+
+<div class="dl">
+  <div>
+    <div class="t">Accred Whitepaper V1.0 (PDF)</div>
+    <div class="s">50 pages · 1.3 MB · 7 October 2026</div>
+  </div>
+  <a class="btn primary" href="Accred_Whitepaper_V1.0.pdf" download>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download PDF
+  </a>
+</div>
+
+  </article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div style="color:var(--fg);font-weight:600">Accred</div>
+      <div>Whitepaper V1.0 · 7 October 2026 · Robinhood Chain (chain ID 4663)</div>
+      <div style="margin-top:8px;max-width:60ch">This document is informational. It is not an offer of securities, investment advice, or a promise of any return. Read it together with <a href="#s12">Section 12, Legal</a>.</div>
+    </div>
+    <div class="links">
+      <a href="https://accred.sh" target="_blank" rel="noopener">accred.sh</a>
+      <a href="https://agent.accred.sh" target="_blank" rel="noopener">Agent</a>
+      <a href="https://build.accred.sh" target="_blank" rel="noopener">Builder</a>
+      <a href="https://x.com/useaccred" target="_blank" rel="noopener">@useaccred</a>
+      <a href="https://robin.etherscan.io" target="_blank" rel="noopener">Explorer</a>
+      <a href="Accred_Whitepaper_V1.0.pdf" download>PDF</a>
+    </div>
+  </div>
+</footer>
+
+<a class="totop" id="toTop" href="#top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</a>
+
+<script>
+(function(){
+  // Theme toggle (system by default, remembered per browser)
+  var root=document.documentElement,btn=document.getElementById('themeBtn');
+  try{var saved=localStorage.getItem('wp-theme');if(saved==='dark'||saved==='light')root.setAttribute('data-theme',saved);}catch(e){}
+  btn.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+    var next=dark?'light':'dark';root.setAttribute('data-theme',next);
+    try{localStorage.setItem('wp-theme',next);}catch(e){}
+  });
+  // Scroll spy for the table of contents
+  var links=[].slice.call(document.querySelectorAll('#tocList a'));
+  var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+  var secs=[].slice.call(document.querySelectorAll('article > section[id]'));
+  var current=null;
+  function setActive(id){if(id===current)return;current=id;links.forEach(function(a){a.classList.toggle('active',a===map[id]);});
+    var a=map[id];if(a&&a.scrollIntoView&&matchMedia('(min-width:1000px)').matches){var toc=document.querySelector('.toc');var r=a.getBoundingClientRect(),t=toc.getBoundingClientRect();if(r.top<t.top||r.bottom>t.bottom)a.scrollIntoView({block:'nearest'});}}
+  function onScroll(){var y=window.scrollY+100,id=secs[0]&&secs[0].id;for(var i=0;i<secs.length;i++){if(secs[i].offsetTop<=y)id=secs[i].id;}setActive(id);
+    document.getElementById('toTop').classList.toggle('show',window.scrollY>900);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  // Collapse the mobile contents list after choosing an entry
+  var det=document.querySelector('.toc details');
+  links.forEach(function(a){a.addEventListener('click',function(){if(!matchMedia('(min-width:1000px)').matches)det.removeAttribute('open');});});
+  if(!matchMedia('(min-width:1000px)').matches)det.removeAttribute('open');
+})();
+</script>
+</body>
+</html>

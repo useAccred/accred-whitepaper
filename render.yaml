@@ -1,0 +1,34 @@
+# Render blueprint: a static site that serves the whitepaper page and the PDF.
+# Custom domain (for example whitepaper.accred.sh) is added in the Render dashboard
+# under the service's Settings → Custom Domains.
+services:
+  - type: web
+    name: accred-whitepaper
+    runtime: static
+    buildCommand: "echo 'static site, nothing to build'"
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: false
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*.pdf
+        name: Cache-Control
+        value: public, max-age=3600
+      - path: /brand/*
+        name: Cache-Control
+        value: public, max-age=604800
+    routes:
+      # Short links to the PDF
+      - type: rewrite
+        source: /pdf
+        destination: /Accred_Whitepaper_V1.0.pdf
+      - type: rewrite
+        source: /whitepaper.pdf
+        destination: /Accred_Whitepaper_V1.0.pdf
+      - type: rewrite
+        source: /Accred_Whitepaper.pdf
+        destination: /Accred_Whitepaper_V1.0.pdf

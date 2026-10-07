@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://whitepaper.accred.sh/sitemap.xml
