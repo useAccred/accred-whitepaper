@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/", "destination": "/Accred_Whitepaper_V1.0.pdf" },
+    { "source": "/pdf", "destination": "/Accred_Whitepaper_V1.0.pdf" },
+    { "source": "/whitepaper.pdf", "destination": "/Accred_Whitepaper_V1.0.pdf" }
+  ],
+  "headers": [
+    { "source": "/(.*)", "headers": [ { "key": "X-Content-Type-Options", "value": "nosniff" } ] },
+    { "source": "/(.*).pdf", "headers": [ { "key": "Cache-Control", "value": "public, max-age=3600" } ] }
+  ]
+}
