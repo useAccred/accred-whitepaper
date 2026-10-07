@@ -5,10 +5,12 @@ The web home of the Accred whitepaper: a readable HTML version of the full docum
 | Path | What it is |
 | --- | --- |
 | `index.html` | The whitepaper as a web page (table of contents, tables, figures, dark mode, print styles) |
-| `Accred_Whitepaper_V1.0.pdf` | The PDF, also reachable at `/pdf` and `/whitepaper.pdf` |
+| `Accred_Whitepaper_V1.0.pdf` | The PDF |
+| `whitepaper.pdf` | A copy at a stable name that does not change with the version |
+| `pdf/index.html` | Redirects `/pdf` to the PDF |
 | `brand/logo.png` | Logo and favicon |
 | `og.png` | Social preview image |
-| `render.yaml` | Render static-site blueprint: headers and short links |
+| `render.yaml` | Render blueprint with headers and rewrites. Only used when the service is created from a Blueprint; the live service was created with the CLI, so the short links are plain files instead |
 
 No build step. Edit `index.html`, push to `main`, and redeploy.
 
